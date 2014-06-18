@@ -1,0 +1,1910 @@
+# depslib dependency file v1.0
+1403012701 source:c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\main.cpp
+	<iostream>
+	<Eigen/Dense>
+
+1401590680 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo
+	<cstdlib>
+	<cstring>
+	<climits>
+	<cmath>
+	<ctime>
+	<cstdio>
+	<iostream>
+	<fstream>
+	<sstream>
+	<stdexcept>
+	<new>
+	<limits>
+	<algorithm>
+	<complex>
+	<vector>
+	<unistd.h>
+	<sys/time.h>
+	"armadillo_bits/config.hpp"
+	"armadillo_bits/compiler_setup.hpp"
+	<initializer_list>
+	<cstdint>
+	<random>
+	<chrono>
+	<tbb/scalable_allocator.h>
+	<mkl_service.h>
+	<tr1/cmath>
+	<tr1/complex>
+	"armadillo_bits/include_atlas.hpp"
+	<hdf5.h>
+	"armadillo_bits/forward_bones.hpp"
+	"armadillo_bits/arma_static_check.hpp"
+	"armadillo_bits/typedef_elem.hpp"
+	"armadillo_bits/typedef_elem_check.hpp"
+	"armadillo_bits/typedef_mat.hpp"
+	"armadillo_bits/arma_boost.hpp"
+	"armadillo_bits/arma_version.hpp"
+	"armadillo_bits/arma_config.hpp"
+	"armadillo_bits/traits.hpp"
+	"armadillo_bits/promote_type.hpp"
+	"armadillo_bits/upgrade_val.hpp"
+	"armadillo_bits/restrictors.hpp"
+	"armadillo_bits/access.hpp"
+	"armadillo_bits/span.hpp"
+	"armadillo_bits/distr_param.hpp"
+	"armadillo_bits/constants.hpp"
+	"armadillo_bits/constants_compat.hpp"
+	"armadillo_bits/arma_rng_cxx11.hpp"
+	"armadillo_bits/arma_rng.hpp"
+	"armadillo_bits/arma_rng_cxx98.hpp"
+	"armadillo_bits/arma_rng.hpp"
+	"armadillo_bits/Base_bones.hpp"
+	"armadillo_bits/BaseCube_bones.hpp"
+	"armadillo_bits/SpBase_bones.hpp"
+	"armadillo_bits/blas_bones.hpp"
+	"armadillo_bits/lapack_bones.hpp"
+	"armadillo_bits/atlas_bones.hpp"
+	"armadillo_bits/arpack_bones.hpp"
+	"armadillo_bits/hdf5_bones.hpp"
+	"armadillo_bits/blas_wrapper.hpp"
+	"armadillo_bits/lapack_wrapper.hpp"
+	"armadillo_bits/atlas_wrapper.hpp"
+	"armadillo_bits/arpack_wrapper.hpp"
+	"armadillo_bits/cond_rel_bones.hpp"
+	"armadillo_bits/arrayops_bones.hpp"
+	"armadillo_bits/podarray_bones.hpp"
+	"armadillo_bits/auxlib_bones.hpp"
+	"armadillo_bits/sp_auxlib_bones.hpp"
+	"armadillo_bits/injector_bones.hpp"
+	"armadillo_bits/Mat_bones.hpp"
+	"armadillo_bits/Col_bones.hpp"
+	"armadillo_bits/Row_bones.hpp"
+	"armadillo_bits/Cube_bones.hpp"
+	"armadillo_bits/xvec_htrans_bones.hpp"
+	"armadillo_bits/SizeMat_bones.hpp"
+	"armadillo_bits/SizeCube_bones.hpp"
+	"armadillo_bits/SpValProxy_bones.hpp"
+	"armadillo_bits/SpMat_bones.hpp"
+	"armadillo_bits/SpCol_bones.hpp"
+	"armadillo_bits/SpRow_bones.hpp"
+	"armadillo_bits/SpSubview_bones.hpp"
+	"armadillo_bits/typedef_mat_fixed.hpp"
+	"armadillo_bits/field_bones.hpp"
+	"armadillo_bits/subview_bones.hpp"
+	"armadillo_bits/subview_elem1_bones.hpp"
+	"armadillo_bits/subview_elem2_bones.hpp"
+	"armadillo_bits/subview_field_bones.hpp"
+	"armadillo_bits/subview_cube_bones.hpp"
+	"armadillo_bits/diagview_bones.hpp"
+	"armadillo_bits/subview_each_bones.hpp"
+	"armadillo_bits/diskio_bones.hpp"
+	"armadillo_bits/wall_clock_bones.hpp"
+	"armadillo_bits/running_stat_bones.hpp"
+	"armadillo_bits/running_stat_vec_bones.hpp"
+	"armadillo_bits/Op_bones.hpp"
+	"armadillo_bits/OpCube_bones.hpp"
+	"armadillo_bits/SpOp_bones.hpp"
+	"armadillo_bits/eOp_bones.hpp"
+	"armadillo_bits/eOpCube_bones.hpp"
+	"armadillo_bits/mtOp_bones.hpp"
+	"armadillo_bits/mtOpCube_bones.hpp"
+	"armadillo_bits/mtSpOp_bones.hpp"
+	"armadillo_bits/Glue_bones.hpp"
+	"armadillo_bits/eGlue_bones.hpp"
+	"armadillo_bits/mtGlue_bones.hpp"
+	"armadillo_bits/SpGlue_bones.hpp"
+	"armadillo_bits/GlueCube_bones.hpp"
+	"armadillo_bits/eGlueCube_bones.hpp"
+	"armadillo_bits/mtGlueCube_bones.hpp"
+	"armadillo_bits/eop_core_bones.hpp"
+	"armadillo_bits/eglue_core_bones.hpp"
+	"armadillo_bits/Gen_bones.hpp"
+	"armadillo_bits/GenCube_bones.hpp"
+	"armadillo_bits/op_diagmat_bones.hpp"
+	"armadillo_bits/op_diagvec_bones.hpp"
+	"armadillo_bits/op_dot_bones.hpp"
+	"armadillo_bits/op_inv_bones.hpp"
+	"armadillo_bits/op_htrans_bones.hpp"
+	"armadillo_bits/op_max_bones.hpp"
+	"armadillo_bits/op_min_bones.hpp"
+	"armadillo_bits/op_mean_bones.hpp"
+	"armadillo_bits/op_median_bones.hpp"
+	"armadillo_bits/op_sort_bones.hpp"
+	"armadillo_bits/op_sum_bones.hpp"
+	"armadillo_bits/op_stddev_bones.hpp"
+	"armadillo_bits/op_strans_bones.hpp"
+	"armadillo_bits/op_var_bones.hpp"
+	"armadillo_bits/op_repmat_bones.hpp"
+	"armadillo_bits/op_reshape_bones.hpp"
+	"armadillo_bits/op_vectorise_bones.hpp"
+	"armadillo_bits/op_resize_bones.hpp"
+	"armadillo_bits/op_cov_bones.hpp"
+	"armadillo_bits/op_cor_bones.hpp"
+	"armadillo_bits/op_shuffle_bones.hpp"
+	"armadillo_bits/op_prod_bones.hpp"
+	"armadillo_bits/op_pinv_bones.hpp"
+	"armadillo_bits/op_dotext_bones.hpp"
+	"armadillo_bits/op_flip_bones.hpp"
+	"armadillo_bits/op_princomp_bones.hpp"
+	"armadillo_bits/op_misc_bones.hpp"
+	"armadillo_bits/op_relational_bones.hpp"
+	"armadillo_bits/op_find_bones.hpp"
+	"armadillo_bits/op_chol_bones.hpp"
+	"armadillo_bits/op_cx_scalar_bones.hpp"
+	"armadillo_bits/op_trimat_bones.hpp"
+	"armadillo_bits/op_cumsum_bones.hpp"
+	"armadillo_bits/op_symmat_bones.hpp"
+	"armadillo_bits/op_hist_bones.hpp"
+	"armadillo_bits/op_unique_bones.hpp"
+	"armadillo_bits/op_toeplitz_bones.hpp"
+	"armadillo_bits/op_fft_bones.hpp"
+	"armadillo_bits/op_any_bones.hpp"
+	"armadillo_bits/op_all_bones.hpp"
+	"armadillo_bits/op_normalise_bones.hpp"
+	"armadillo_bits/glue_times_bones.hpp"
+	"armadillo_bits/glue_mixed_bones.hpp"
+	"armadillo_bits/glue_cov_bones.hpp"
+	"armadillo_bits/glue_cor_bones.hpp"
+	"armadillo_bits/glue_kron_bones.hpp"
+	"armadillo_bits/glue_cross_bones.hpp"
+	"armadillo_bits/glue_join_bones.hpp"
+	"armadillo_bits/glue_relational_bones.hpp"
+	"armadillo_bits/glue_solve_bones.hpp"
+	"armadillo_bits/glue_conv_bones.hpp"
+	"armadillo_bits/glue_toeplitz_bones.hpp"
+	"armadillo_bits/glue_hist_bones.hpp"
+	"armadillo_bits/glue_histc_bones.hpp"
+	"armadillo_bits/glue_max_bones.hpp"
+	"armadillo_bits/glue_min_bones.hpp"
+	"armadillo_bits/spop_max_bones.hpp"
+	"armadillo_bits/spop_min_bones.hpp"
+	"armadillo_bits/spop_sum_bones.hpp"
+	"armadillo_bits/spop_strans_bones.hpp"
+	"armadillo_bits/spop_htrans_bones.hpp"
+	"armadillo_bits/spop_misc_bones.hpp"
+	"armadillo_bits/spop_mean_bones.hpp"
+	"armadillo_bits/spop_var_bones.hpp"
+	"armadillo_bits/spglue_plus_bones.hpp"
+	"armadillo_bits/spglue_minus_bones.hpp"
+	"armadillo_bits/spglue_times_bones.hpp"
+	"armadillo_bits/debug.hpp"
+	"armadillo_bits/memory.hpp"
+	"armadillo_bits/arma_cmath.hpp"
+	"armadillo_bits/unwrap.hpp"
+	"armadillo_bits/unwrap_cube.hpp"
+	"armadillo_bits/unwrap_spmat.hpp"
+	"armadillo_bits/Proxy.hpp"
+	"armadillo_bits/ProxyCube.hpp"
+	"armadillo_bits/SpProxy.hpp"
+	"armadillo_bits/diagmat_proxy.hpp"
+	"armadillo_bits/strip.hpp"
+	"armadillo_bits/Op_meat.hpp"
+	"armadillo_bits/OpCube_meat.hpp"
+	"armadillo_bits/SpOp_meat.hpp"
+	"armadillo_bits/mtOp_meat.hpp"
+	"armadillo_bits/mtOpCube_meat.hpp"
+	"armadillo_bits/mtSpOp_meat.hpp"
+	"armadillo_bits/Glue_meat.hpp"
+	"armadillo_bits/GlueCube_meat.hpp"
+	"armadillo_bits/SpGlue_meat.hpp"
+	"armadillo_bits/eop_aux.hpp"
+	"armadillo_bits/eOp_meat.hpp"
+	"armadillo_bits/eOpCube_meat.hpp"
+	"armadillo_bits/eGlue_meat.hpp"
+	"armadillo_bits/eGlueCube_meat.hpp"
+	"armadillo_bits/mtGlue_meat.hpp"
+	"armadillo_bits/mtGlueCube_meat.hpp"
+	"armadillo_bits/Base_meat.hpp"
+	"armadillo_bits/BaseCube_meat.hpp"
+	"armadillo_bits/SpBase_meat.hpp"
+	"armadillo_bits/Gen_meat.hpp"
+	"armadillo_bits/GenCube_meat.hpp"
+	"armadillo_bits/arma_ostream_bones.hpp"
+	"armadillo_bits/arma_ostream_meat.hpp"
+	"armadillo_bits/fn_n_unique.hpp"
+	"armadillo_bits/operator_plus.hpp"
+	"armadillo_bits/operator_minus.hpp"
+	"armadillo_bits/operator_times.hpp"
+	"armadillo_bits/operator_schur.hpp"
+	"armadillo_bits/operator_div.hpp"
+	"armadillo_bits/operator_relational.hpp"
+	"armadillo_bits/operator_cube_plus.hpp"
+	"armadillo_bits/operator_cube_minus.hpp"
+	"armadillo_bits/operator_cube_times.hpp"
+	"armadillo_bits/operator_cube_schur.hpp"
+	"armadillo_bits/operator_cube_div.hpp"
+	"armadillo_bits/operator_cube_relational.hpp"
+	"armadillo_bits/operator_ostream.hpp"
+	"armadillo_bits/fn_conv_to.hpp"
+	"armadillo_bits/fn_min.hpp"
+	"armadillo_bits/fn_max.hpp"
+	"armadillo_bits/fn_accu.hpp"
+	"armadillo_bits/fn_sum.hpp"
+	"armadillo_bits/fn_diagmat.hpp"
+	"armadillo_bits/fn_diagvec.hpp"
+	"armadillo_bits/fn_inv.hpp"
+	"armadillo_bits/fn_trace.hpp"
+	"armadillo_bits/fn_trans.hpp"
+	"armadillo_bits/fn_det.hpp"
+	"armadillo_bits/fn_log_det.hpp"
+	"armadillo_bits/fn_eig_sym.hpp"
+	"armadillo_bits/fn_eig_gen.hpp"
+	"armadillo_bits/fn_eig_pair.hpp"
+	"armadillo_bits/fn_lu.hpp"
+	"armadillo_bits/fn_zeros.hpp"
+	"armadillo_bits/fn_ones.hpp"
+	"armadillo_bits/fn_eye.hpp"
+	"armadillo_bits/fn_misc.hpp"
+	"armadillo_bits/fn_find.hpp"
+	"armadillo_bits/fn_elem.hpp"
+	"armadillo_bits/fn_norm.hpp"
+	"armadillo_bits/fn_dot.hpp"
+	"armadillo_bits/fn_randu.hpp"
+	"armadillo_bits/fn_randn.hpp"
+	"armadillo_bits/fn_trig.hpp"
+	"armadillo_bits/fn_mean.hpp"
+	"armadillo_bits/fn_median.hpp"
+	"armadillo_bits/fn_stddev.hpp"
+	"armadillo_bits/fn_var.hpp"
+	"armadillo_bits/fn_sort.hpp"
+	"armadillo_bits/fn_sort_index.hpp"
+	"armadillo_bits/fn_strans.hpp"
+	"armadillo_bits/fn_chol.hpp"
+	"armadillo_bits/fn_qr.hpp"
+	"armadillo_bits/fn_svd.hpp"
+	"armadillo_bits/fn_solve.hpp"
+	"armadillo_bits/fn_repmat.hpp"
+	"armadillo_bits/fn_reshape.hpp"
+	"armadillo_bits/fn_vectorise.hpp"
+	"armadillo_bits/fn_resize.hpp"
+	"armadillo_bits/fn_cov.hpp"
+	"armadillo_bits/fn_cor.hpp"
+	"armadillo_bits/fn_shuffle.hpp"
+	"armadillo_bits/fn_prod.hpp"
+	"armadillo_bits/fn_eps.hpp"
+	"armadillo_bits/fn_pinv.hpp"
+	"armadillo_bits/fn_rank.hpp"
+	"armadillo_bits/fn_kron.hpp"
+	"armadillo_bits/fn_flip.hpp"
+	"armadillo_bits/fn_as_scalar.hpp"
+	"armadillo_bits/fn_princomp.hpp"
+	"armadillo_bits/fn_cross.hpp"
+	"armadillo_bits/fn_join.hpp"
+	"armadillo_bits/fn_conv.hpp"
+	"armadillo_bits/fn_trunc_exp.hpp"
+	"armadillo_bits/fn_trunc_log.hpp"
+	"armadillo_bits/fn_toeplitz.hpp"
+	"armadillo_bits/fn_trimat.hpp"
+	"armadillo_bits/fn_cumsum.hpp"
+	"armadillo_bits/fn_symmat.hpp"
+	"armadillo_bits/fn_syl_lyap.hpp"
+	"armadillo_bits/fn_hist.hpp"
+	"armadillo_bits/fn_histc.hpp"
+	"armadillo_bits/fn_unique.hpp"
+	"armadillo_bits/fn_fft.hpp"
+	"armadillo_bits/fn_fft2.hpp"
+	"armadillo_bits/fn_any.hpp"
+	"armadillo_bits/fn_all.hpp"
+	"armadillo_bits/fn_size.hpp"
+	"armadillo_bits/fn_numel.hpp"
+	"armadillo_bits/fn_inplace_strans.hpp"
+	"armadillo_bits/fn_inplace_trans.hpp"
+	"armadillo_bits/fn_randi.hpp"
+	"armadillo_bits/fn_cond.hpp"
+	"armadillo_bits/fn_normalise.hpp"
+	"armadillo_bits/fn_speye.hpp"
+	"armadillo_bits/fn_spones.hpp"
+	"armadillo_bits/fn_sprandn.hpp"
+	"armadillo_bits/fn_sprandu.hpp"
+	"armadillo_bits/fn_eigs_sym.hpp"
+	"armadillo_bits/fn_eigs_gen.hpp"
+	"armadillo_bits/fn_norm_sparse.hpp"
+	"armadillo_bits/hdf5_misc.hpp"
+	"armadillo_bits/fft_engine.hpp"
+	"armadillo_bits/mul_gemv.hpp"
+	"armadillo_bits/mul_gemm.hpp"
+	"armadillo_bits/mul_gemm_mixed.hpp"
+	"armadillo_bits/mul_syrk.hpp"
+	"armadillo_bits/mul_herk.hpp"
+	"armadillo_bits/eop_core_meat.hpp"
+	"armadillo_bits/eglue_core_meat.hpp"
+	"armadillo_bits/cond_rel_meat.hpp"
+	"armadillo_bits/arrayops_meat.hpp"
+	"armadillo_bits/podarray_meat.hpp"
+	"armadillo_bits/auxlib_meat.hpp"
+	"armadillo_bits/sp_auxlib_meat.hpp"
+	"armadillo_bits/injector_meat.hpp"
+	"armadillo_bits/Mat_meat.hpp"
+	"armadillo_bits/Col_meat.hpp"
+	"armadillo_bits/Row_meat.hpp"
+	"armadillo_bits/Cube_meat.hpp"
+	"armadillo_bits/xvec_htrans_meat.hpp"
+	"armadillo_bits/SizeMat_meat.hpp"
+	"armadillo_bits/SizeCube_meat.hpp"
+	"armadillo_bits/field_meat.hpp"
+	"armadillo_bits/subview_meat.hpp"
+	"armadillo_bits/subview_elem1_meat.hpp"
+	"armadillo_bits/subview_elem2_meat.hpp"
+	"armadillo_bits/subview_field_meat.hpp"
+	"armadillo_bits/subview_cube_meat.hpp"
+	"armadillo_bits/diagview_meat.hpp"
+	"armadillo_bits/subview_each_meat.hpp"
+	"armadillo_bits/SpValProxy_meat.hpp"
+	"armadillo_bits/SpMat_meat.hpp"
+	"armadillo_bits/SpMat_iterators_meat.hpp"
+	"armadillo_bits/SpCol_meat.hpp"
+	"armadillo_bits/SpRow_meat.hpp"
+	"armadillo_bits/SpSubview_meat.hpp"
+	"armadillo_bits/SpSubview_iterators_meat.hpp"
+	"armadillo_bits/diskio_meat.hpp"
+	"armadillo_bits/wall_clock_meat.hpp"
+	"armadillo_bits/running_stat_meat.hpp"
+	"armadillo_bits/running_stat_vec_meat.hpp"
+	"armadillo_bits/op_diagmat_meat.hpp"
+	"armadillo_bits/op_diagvec_meat.hpp"
+	"armadillo_bits/op_dot_meat.hpp"
+	"armadillo_bits/op_inv_meat.hpp"
+	"armadillo_bits/op_htrans_meat.hpp"
+	"armadillo_bits/op_max_meat.hpp"
+	"armadillo_bits/op_min_meat.hpp"
+	"armadillo_bits/op_mean_meat.hpp"
+	"armadillo_bits/op_median_meat.hpp"
+	"armadillo_bits/op_sort_meat.hpp"
+	"armadillo_bits/op_sum_meat.hpp"
+	"armadillo_bits/op_stddev_meat.hpp"
+	"armadillo_bits/op_strans_meat.hpp"
+	"armadillo_bits/op_var_meat.hpp"
+	"armadillo_bits/op_repmat_meat.hpp"
+	"armadillo_bits/op_reshape_meat.hpp"
+	"armadillo_bits/op_vectorise_meat.hpp"
+	"armadillo_bits/op_resize_meat.hpp"
+	"armadillo_bits/op_cov_meat.hpp"
+	"armadillo_bits/op_cor_meat.hpp"
+	"armadillo_bits/op_shuffle_meat.hpp"
+	"armadillo_bits/op_prod_meat.hpp"
+	"armadillo_bits/op_pinv_meat.hpp"
+	"armadillo_bits/op_dotext_meat.hpp"
+	"armadillo_bits/op_flip_meat.hpp"
+	"armadillo_bits/op_princomp_meat.hpp"
+	"armadillo_bits/op_misc_meat.hpp"
+	"armadillo_bits/op_relational_meat.hpp"
+	"armadillo_bits/op_find_meat.hpp"
+	"armadillo_bits/op_chol_meat.hpp"
+	"armadillo_bits/op_cx_scalar_meat.hpp"
+	"armadillo_bits/op_trimat_meat.hpp"
+	"armadillo_bits/op_cumsum_meat.hpp"
+	"armadillo_bits/op_symmat_meat.hpp"
+	"armadillo_bits/op_hist_meat.hpp"
+	"armadillo_bits/op_unique_meat.hpp"
+	"armadillo_bits/op_toeplitz_meat.hpp"
+	"armadillo_bits/op_fft_meat.hpp"
+	"armadillo_bits/op_any_meat.hpp"
+	"armadillo_bits/op_all_meat.hpp"
+	"armadillo_bits/op_normalise_meat.hpp"
+	"armadillo_bits/glue_times_meat.hpp"
+	"armadillo_bits/glue_mixed_meat.hpp"
+	"armadillo_bits/glue_cov_meat.hpp"
+	"armadillo_bits/glue_cor_meat.hpp"
+	"armadillo_bits/glue_kron_meat.hpp"
+	"armadillo_bits/glue_cross_meat.hpp"
+	"armadillo_bits/glue_join_meat.hpp"
+	"armadillo_bits/glue_relational_meat.hpp"
+	"armadillo_bits/glue_solve_meat.hpp"
+	"armadillo_bits/glue_conv_meat.hpp"
+	"armadillo_bits/glue_toeplitz_meat.hpp"
+	"armadillo_bits/glue_hist_meat.hpp"
+	"armadillo_bits/glue_histc_meat.hpp"
+	"armadillo_bits/glue_max_meat.hpp"
+	"armadillo_bits/glue_min_meat.hpp"
+	"armadillo_bits/spop_max_meat.hpp"
+	"armadillo_bits/spop_min_meat.hpp"
+	"armadillo_bits/spop_sum_meat.hpp"
+	"armadillo_bits/spop_strans_meat.hpp"
+	"armadillo_bits/spop_htrans_meat.hpp"
+	"armadillo_bits/spop_misc_meat.hpp"
+	"armadillo_bits/spop_mean_meat.hpp"
+	"armadillo_bits/spop_var_meat.hpp"
+	"armadillo_bits/spglue_plus_meat.hpp"
+	"armadillo_bits/spglue_minus_meat.hpp"
+	"armadillo_bits/spglue_times_meat.hpp"
+	"armadillo_bits/compiler_setup_post.hpp"
+
+1402966693 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\config.hpp
+
+1401510842 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\compiler_setup.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\include_atlas.hpp
+	<cblas.h>
+	<clapack.h>
+
+1394815890 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\forward_bones.hpp
+
+1387425042 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_static_check.hpp
+
+1385903658 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\typedef_elem.hpp
+
+1394631288 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\typedef_elem_check.hpp
+
+1385903130 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\typedef_mat.hpp
+
+1386752748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_boost.hpp
+
+1401590680 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_version.hpp
+
+1388444252 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_config.hpp
+
+1394815890 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\traits.hpp
+
+1375671788 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\promote_type.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\upgrade_val.hpp
+
+1395152888 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\restrictors.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\access.hpp
+
+1379923846 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\span.hpp
+
+1386296282 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\distr_param.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\constants.hpp
+
+1383829288 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\constants_compat.hpp
+
+1385898748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_rng_cxx11.hpp
+
+1385898748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_rng.hpp
+
+1389684522 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_rng_cxx98.hpp
+
+1394601872 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\base_bones.hpp
+
+1392182932 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\basecube_bones.hpp
+
+1392182932 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spbase_bones.hpp
+
+1375758482 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\blas_bones.hpp
+
+1387793288 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\lapack_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\atlas_bones.hpp
+
+1387976520 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arpack_bones.hpp
+
+1397522380 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\hdf5_bones.hpp
+
+1375771846 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\blas_wrapper.hpp
+
+1387269532 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\lapack_wrapper.hpp
+
+1381713414 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\atlas_wrapper.hpp
+
+1387976520 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arpack_wrapper.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\cond_rel_bones.hpp
+
+1392654816 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arrayops_bones.hpp
+
+1375671788 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\podarray_bones.hpp
+
+1388888850 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\auxlib_bones.hpp
+
+1393565150 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sp_auxlib_bones.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\injector_bones.hpp
+
+1399634798 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mat_bones.hpp
+
+1386834896 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\col_bones.hpp
+
+1386834896 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\row_bones.hpp
+
+1387973084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\cube_bones.hpp
+
+1370503770 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\xvec_htrans_bones.hpp
+
+1391356512 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sizemat_bones.hpp
+
+1391356512 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sizecube_bones.hpp
+
+1371038880 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spvalproxy_bones.hpp
+
+1393041782 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spmat_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spcol_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sprow_bones.hpp
+
+1393174428 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spsubview_bones.hpp
+
+1385903130 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\typedef_mat_fixed.hpp
+
+1392092416 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\field_bones.hpp
+
+1383829288 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_bones.hpp
+
+1387973084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_elem1_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_elem2_bones.hpp
+
+1392006790 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_field_bones.hpp
+
+1383829288 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_cube_bones.hpp
+
+1383829288 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\diagview_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_each_bones.hpp
+
+1369792240 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\diskio_bones.hpp
+
+1400827092 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\wall_clock_bones.hpp
+
+1386163520 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\running_stat_bones.hpp
+
+1386159492 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\running_stat_vec_bones.hpp
+
+1393299994 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\opcube_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eop_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eopcube_bones.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtop_bones.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtopcube_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtspop_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eglue_bones.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtglue_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\gluecube_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\egluecube_bones.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtgluecube_bones.hpp
+
+1379460222 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eop_core_bones.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eglue_core_bones.hpp
+
+1375338988 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\gen_bones.hpp
+
+1375338988 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\gencube_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_diagmat_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_diagvec_bones.hpp
+
+1400476584 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_dot_bones.hpp
+
+1395049528 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_inv_bones.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_htrans_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_max_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_min_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_mean_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_median_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_sort_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_sum_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_stddev_bones.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_strans_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_var_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_repmat_bones.hpp
+
+1397354616 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_reshape_bones.hpp
+
+1387987280 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_vectorise_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_resize_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cov_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cor_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_shuffle_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_prod_bones.hpp
+
+1381215348 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_pinv_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_dotext_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_flip_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_princomp_bones.hpp
+
+1388854336 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_misc_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_relational_bones.hpp
+
+1398869668 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_find_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_chol_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cx_scalar_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_trimat_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cumsum_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_symmat_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_hist_bones.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_unique_bones.hpp
+
+1361504322 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_toeplitz_bones.hpp
+
+1365153642 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_fft_bones.hpp
+
+1375972726 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_any_bones.hpp
+
+1375974434 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_all_bones.hpp
+
+1393308658 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_normalise_bones.hpp
+
+1397658432 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_times_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_mixed_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_cov_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_cor_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_kron_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_cross_bones.hpp
+
+1380106368 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_join_bones.hpp
+
+1394952404 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_relational_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_solve_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_conv_bones.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_toeplitz_bones.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_hist_bones.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_histc_bones.hpp
+
+1385213028 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_max_bones.hpp
+
+1385213028 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_min_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_max_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_min_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_sum_bones.hpp
+
+1394454208 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_strans_bones.hpp
+
+1394454208 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_htrans_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_misc_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_mean_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_var_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_plus_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_minus_bones.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_times_bones.hpp
+
+1401509208 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\debug.hpp
+
+1394631288 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\memory.hpp
+
+1387610894 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_cmath.hpp
+
+1394336504 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\unwrap.hpp
+
+1387955660 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\unwrap_cube.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\unwrap_spmat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\proxy.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\proxycube.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spproxy.hpp
+
+1395057654 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\diagmat_proxy.hpp
+
+1388071748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\strip.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\opcube_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_meat.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtop_meat.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtopcube_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtspop_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\gluecube_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_meat.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eop_aux.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eop_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eopcube_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eglue_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\egluecube_meat.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtglue_meat.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mtgluecube_meat.hpp
+
+1394601872 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\base_meat.hpp
+
+1392182932 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\basecube_meat.hpp
+
+1392182932 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spbase_meat.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\gen_meat.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\gencube_meat.hpp
+
+1391356512 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_ostream_bones.hpp
+
+1392006790 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arma_ostream_meat.hpp
+
+1393132320 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_n_unique.hpp
+
+1375671624 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_plus.hpp
+
+1394161872 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_minus.hpp
+
+1375671624 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_times.hpp
+
+1375338988 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_schur.hpp
+
+1375671624 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_div.hpp
+
+1394951670 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_relational.hpp
+
+1375671788 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_cube_plus.hpp
+
+1375671788 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_cube_minus.hpp
+
+1375671788 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_cube_times.hpp
+
+1375671788 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_cube_schur.hpp
+
+1375671788 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_cube_div.hpp
+
+1394952404 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_cube_relational.hpp
+
+1391356512 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\operator_ostream.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_conv_to.hpp
+
+1385213028 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_min.hpp
+
+1385213028 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_max.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_accu.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_sum.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_diagmat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_diagvec.hpp
+
+1395049528 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_inv.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_trace.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_trans.hpp
+
+1391661748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_det.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_log_det.hpp
+
+1391661748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_eig_sym.hpp
+
+1387344524 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_eig_gen.hpp
+
+1387344524 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_eig_pair.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_lu.hpp
+
+1387810008 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_zeros.hpp
+
+1382929680 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_ones.hpp
+
+1382930360 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_eye.hpp
+
+1398780762 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_misc.hpp
+
+1398922422 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_find.hpp
+
+1387955660 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_elem.hpp
+
+1400512804 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_norm.hpp
+
+1400476584 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_dot.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_randu.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_randn.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_trig.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_mean.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_median.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_stddev.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_var.hpp
+
+1393229654 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_sort.hpp
+
+1393229654 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_sort_index.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_strans.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_chol.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_qr.hpp
+
+1391661748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_svd.hpp
+
+1393565150 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_solve.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_repmat.hpp
+
+1397354616 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_reshape.hpp
+
+1375346820 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_vectorise.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_resize.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_cov.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_cor.hpp
+
+1380797958 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_shuffle.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_prod.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_eps.hpp
+
+1391661748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_pinv.hpp
+
+1386683246 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_rank.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_kron.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_flip.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_as_scalar.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_princomp.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_cross.hpp
+
+1380106368 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_join.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_conv.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_trunc_exp.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_trunc_log.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_toeplitz.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_trimat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_cumsum.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_symmat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_syl_lyap.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_hist.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_histc.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_unique.hpp
+
+1379459744 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_fft.hpp
+
+1379459744 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_fft2.hpp
+
+1375961210 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_any.hpp
+
+1375974434 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_all.hpp
+
+1391491214 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_size.hpp
+
+1380253958 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_numel.hpp
+
+1391661748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_inplace_strans.hpp
+
+1391661748 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_inplace_trans.hpp
+
+1386296282 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_randi.hpp
+
+1387776888 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_cond.hpp
+
+1393339840 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_normalise.hpp
+
+1387810008 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_speye.hpp
+
+1387810504 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_spones.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_sprandn.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_sprandu.hpp
+
+1391835720 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_eigs_sym.hpp
+
+1391843888 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_eigs_gen.hpp
+
+1393348898 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fn_norm_sparse.hpp
+
+1397520652 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\hdf5_misc.hpp
+
+1365179410 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\fft_engine.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mul_gemv.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mul_gemm.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mul_gemm_mixed.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mul_syrk.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mul_herk.hpp
+
+1390888532 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eop_core_meat.hpp
+
+1390888532 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\eglue_core_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\cond_rel_meat.hpp
+
+1392654816 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\arrayops_meat.hpp
+
+1388454734 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\podarray_meat.hpp
+
+1393425208 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\auxlib_meat.hpp
+
+1393565150 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sp_auxlib_meat.hpp
+
+1376289542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\injector_meat.hpp
+
+1399634798 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\mat_meat.hpp
+
+1389659314 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\col_meat.hpp
+
+1389659314 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\row_meat.hpp
+
+1389714740 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\cube_meat.hpp
+
+1370503770 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\xvec_htrans_meat.hpp
+
+1391356512 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sizemat_meat.hpp
+
+1391356512 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sizecube_meat.hpp
+
+1392092416 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\field_meat.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_meat.hpp
+
+1387973084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_elem1_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_elem2_meat.hpp
+
+1392006790 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_field_meat.hpp
+
+1401421424 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_cube_meat.hpp
+
+1385704084 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\diagview_meat.hpp
+
+1361506714 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\subview_each_meat.hpp
+
+1371038880 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spvalproxy_meat.hpp
+
+1393081624 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spmat_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spmat_iterators_meat.hpp
+
+1366939128 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spcol_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\sprow_meat.hpp
+
+1393387524 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spsubview_meat.hpp
+
+1375949306 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spsubview_iterators_meat.hpp
+
+1397523290 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\diskio_meat.hpp
+
+1400827092 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\wall_clock_meat.hpp
+
+1386161640 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\running_stat_meat.hpp
+
+1386246982 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\running_stat_vec_meat.hpp
+
+1380698022 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_diagmat_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_diagvec_meat.hpp
+
+1400512804 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_dot_meat.hpp
+
+1395049528 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_inv_meat.hpp
+
+1380688248 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_htrans_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_max_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_min_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_mean_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_median_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_sort_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_sum_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_stddev_meat.hpp
+
+1381307378 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_strans_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_var_meat.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_repmat_meat.hpp
+
+1397354616 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_reshape_meat.hpp
+
+1387987280 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_vectorise_meat.hpp
+
+1387980078 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_resize_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cov_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cor_meat.hpp
+
+1385706438 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_shuffle_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_prod_meat.hpp
+
+1381215348 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_pinv_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_dotext_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_flip_meat.hpp
+
+1386251480 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_princomp_meat.hpp
+
+1388854336 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_misc_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_relational_meat.hpp
+
+1399692178 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_find_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_chol_meat.hpp
+
+1386254878 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cx_scalar_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_trimat_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_cumsum_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_symmat_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_hist_meat.hpp
+
+1375941264 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_unique_meat.hpp
+
+1361504322 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_toeplitz_meat.hpp
+
+1380698022 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_fft_meat.hpp
+
+1395152888 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_any_meat.hpp
+
+1395152888 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_all_meat.hpp
+
+1393818152 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\op_normalise_meat.hpp
+
+1399010712 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_times_meat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_mixed_meat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_cov_meat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_cor_meat.hpp
+
+1380107530 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_kron_meat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_cross_meat.hpp
+
+1380106368 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_join_meat.hpp
+
+1394952404 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_relational_meat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_solve_meat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_conv_meat.hpp
+
+1375861602 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_toeplitz_meat.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_hist_meat.hpp
+
+1387976646 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_histc_meat.hpp
+
+1385213028 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_max_meat.hpp
+
+1385213028 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\glue_min_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_max_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_min_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_sum_meat.hpp
+
+1394455542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_strans_meat.hpp
+
+1394455542 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_htrans_meat.hpp
+
+1393000014 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_misc_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_mean_meat.hpp
+
+1361430996 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spop_var_meat.hpp
+
+1393042884 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_plus_meat.hpp
+
+1393042884 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_minus_meat.hpp
+
+1365818978 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\spglue_times_meat.hpp
+
+1375427138 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\armadillo_bits\compiler_setup_post.hpp
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\dense
+	"Core"
+	"LU"
+	"Cholesky"
+	"QR"
+	"SVD"
+	"Geometry"
+	"Eigenvalues"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\core
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/Core/util/Macros.h"
+	<complex>
+	"src/Core/util/MKL_support.h"
+	<malloc.h>
+	<immintrin.h>
+	<emmintrin.h>
+	<xmmintrin.h>
+	<pmmintrin.h>
+	<tmmintrin.h>
+	<smmintrin.h>
+	<nmmintrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<omp.h>
+	<cerrno>
+	<cstddef>
+	<cstdlib>
+	<cmath>
+	<cassert>
+	<functional>
+	<iosfwd>
+	<cstring>
+	<string>
+	<limits>
+	<climits>
+	<algorithm>
+	<iostream>
+	<intrin.h>
+	<new>
+	"src/Core/util/Constants.h"
+	"src/Core/util/ForwardDeclarations.h"
+	"src/Core/util/Meta.h"
+	"src/Core/util/StaticAssert.h"
+	"src/Core/util/XprHelper.h"
+	"src/Core/util/Memory.h"
+	"src/Core/NumTraits.h"
+	"src/Core/MathFunctions.h"
+	"src/Core/GenericPacketMath.h"
+	"src/Core/arch/SSE/PacketMath.h"
+	"src/Core/arch/SSE/MathFunctions.h"
+	"src/Core/arch/SSE/Complex.h"
+	"src/Core/arch/AltiVec/PacketMath.h"
+	"src/Core/arch/AltiVec/Complex.h"
+	"src/Core/arch/NEON/PacketMath.h"
+	"src/Core/arch/NEON/Complex.h"
+	"src/Core/arch/Default/Settings.h"
+	"src/Core/Functors.h"
+	"src/Core/DenseCoeffsBase.h"
+	"src/Core/DenseBase.h"
+	"src/Core/MatrixBase.h"
+	"src/Core/EigenBase.h"
+	"src/Core/Assign.h"
+	"src/Core/util/BlasUtil.h"
+	"src/Core/DenseStorage.h"
+	"src/Core/NestByValue.h"
+	"src/Core/ForceAlignedAccess.h"
+	"src/Core/ReturnByValue.h"
+	"src/Core/NoAlias.h"
+	"src/Core/PlainObjectBase.h"
+	"src/Core/Matrix.h"
+	"src/Core/Array.h"
+	"src/Core/CwiseBinaryOp.h"
+	"src/Core/CwiseUnaryOp.h"
+	"src/Core/CwiseNullaryOp.h"
+	"src/Core/CwiseUnaryView.h"
+	"src/Core/SelfCwiseBinaryOp.h"
+	"src/Core/Dot.h"
+	"src/Core/StableNorm.h"
+	"src/Core/MapBase.h"
+	"src/Core/Stride.h"
+	"src/Core/Map.h"
+	"src/Core/Block.h"
+	"src/Core/VectorBlock.h"
+	"src/Core/Ref.h"
+	"src/Core/Transpose.h"
+	"src/Core/DiagonalMatrix.h"
+	"src/Core/Diagonal.h"
+	"src/Core/DiagonalProduct.h"
+	"src/Core/PermutationMatrix.h"
+	"src/Core/Transpositions.h"
+	"src/Core/Redux.h"
+	"src/Core/Visitor.h"
+	"src/Core/Fuzzy.h"
+	"src/Core/IO.h"
+	"src/Core/Swap.h"
+	"src/Core/CommaInitializer.h"
+	"src/Core/Flagged.h"
+	"src/Core/ProductBase.h"
+	"src/Core/GeneralProduct.h"
+	"src/Core/TriangularMatrix.h"
+	"src/Core/SelfAdjointView.h"
+	"src/Core/products/GeneralBlockPanelKernel.h"
+	"src/Core/products/Parallelizer.h"
+	"src/Core/products/CoeffBasedProduct.h"
+	"src/Core/products/GeneralMatrixVector.h"
+	"src/Core/products/GeneralMatrixMatrix.h"
+	"src/Core/SolveTriangular.h"
+	"src/Core/products/GeneralMatrixMatrixTriangular.h"
+	"src/Core/products/SelfadjointMatrixVector.h"
+	"src/Core/products/SelfadjointMatrixMatrix.h"
+	"src/Core/products/SelfadjointProduct.h"
+	"src/Core/products/SelfadjointRank2Update.h"
+	"src/Core/products/TriangularMatrixVector.h"
+	"src/Core/products/TriangularMatrixMatrix.h"
+	"src/Core/products/TriangularSolverMatrix.h"
+	"src/Core/products/TriangularSolverVector.h"
+	"src/Core/BandMatrix.h"
+	"src/Core/CoreIterators.h"
+	"src/Core/BooleanRedux.h"
+	"src/Core/Select.h"
+	"src/Core/VectorwiseOp.h"
+	"src/Core/Random.h"
+	"src/Core/Replicate.h"
+	"src/Core/Reverse.h"
+	"src/Core/ArrayBase.h"
+	"src/Core/ArrayWrapper.h"
+	"src/Core/products/GeneralMatrixMatrix_MKL.h"
+	"src/Core/products/GeneralMatrixVector_MKL.h"
+	"src/Core/products/GeneralMatrixMatrixTriangular_MKL.h"
+	"src/Core/products/SelfadjointMatrixMatrix_MKL.h"
+	"src/Core/products/SelfadjointMatrixVector_MKL.h"
+	"src/Core/products/TriangularMatrixMatrix_MKL.h"
+	"src/Core/products/TriangularMatrixVector_MKL.h"
+	"src/Core/products/TriangularSolverMatrix_MKL.h"
+	"src/Core/Assign_MKL.h"
+	"src/Core/GlobalFunctions.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+	"Eigen2Support"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\disablestupidwarnings.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\macros.h
+	<cstdlib>
+	<iostream>
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\mkl_support.h
+	<mkl.h>
+	<mkl_lapacke.h>
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\constants.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\forwarddeclarations.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\meta.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\staticassert.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\xprhelper.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\memory.h
+	<unistd.h>
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\numtraits.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\mathfunctions.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\genericpacketmath.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\sse\packetmath.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\sse\mathfunctions.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\sse\complex.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\altivec\packetmath.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\altivec\complex.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\neon\packetmath.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\neon\complex.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arch\default\settings.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\functors.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\densecoeffsbase.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\densebase.h
+	"../plugins/BlockMethods.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\plugins\blockmethods.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\matrixbase.h
+	"../plugins/CommonCwiseUnaryOps.h"
+	"../plugins/CommonCwiseBinaryOps.h"
+	"../plugins/MatrixCwiseUnaryOps.h"
+	"../plugins/MatrixCwiseBinaryOps.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\plugins\commoncwiseunaryops.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\plugins\commoncwisebinaryops.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\plugins\matrixcwiseunaryops.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\plugins\matrixcwisebinaryops.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\eigenbase.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\assign.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\blasutil.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\densestorage.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\nestbyvalue.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\forcealignedaccess.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\returnbyvalue.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\noalias.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\plainobjectbase.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\matrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\array.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\cwisebinaryop.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\cwiseunaryop.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\cwisenullaryop.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\cwiseunaryview.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\selfcwisebinaryop.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\dot.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\stablenorm.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\mapbase.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\stride.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\map.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\block.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\vectorblock.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\ref.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\transpose.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\diagonalmatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\diagonal.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\diagonalproduct.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\permutationmatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\transpositions.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\redux.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\visitor.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\fuzzy.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\io.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\swap.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\commainitializer.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\flagged.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\productbase.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\generalproduct.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\triangularmatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\selfadjointview.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\generalblockpanelkernel.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\parallelizer.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\coeffbasedproduct.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\generalmatrixvector.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\generalmatrixmatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\solvetriangular.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\generalmatrixmatrixtriangular.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\selfadjointmatrixvector.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\selfadjointmatrixmatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\selfadjointproduct.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\selfadjointrank2update.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\triangularmatrixvector.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\triangularmatrixmatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\triangularsolvermatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\triangularsolvervector.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\bandmatrix.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\coreiterators.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\booleanredux.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\select.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\vectorwiseop.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\random.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\replicate.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\reverse.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arraybase.h
+	"../plugins/CommonCwiseUnaryOps.h"
+	"../plugins/MatrixCwiseUnaryOps.h"
+	"../plugins/ArrayCwiseUnaryOps.h"
+	"../plugins/CommonCwiseBinaryOps.h"
+	"../plugins/MatrixCwiseBinaryOps.h"
+	"../plugins/ArrayCwiseBinaryOps.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\plugins\arraycwiseunaryops.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\plugins\arraycwisebinaryops.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\arraywrapper.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\generalmatrixmatrix_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\generalmatrixvector_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\generalmatrixmatrixtriangular_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\selfadjointmatrixmatrix_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\selfadjointmatrixvector_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\triangularmatrixmatrix_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\triangularmatrixvector_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\products\triangularsolvermatrix_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\assign_mkl.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\globalfunctions.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\core\util\reenablestupidwarnings.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\eigen2support
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/Eigen2Support/Macros.h"
+	"src/Eigen2Support/Memory.h"
+	"src/Eigen2Support/Meta.h"
+	"src/Eigen2Support/Lazy.h"
+	"src/Eigen2Support/Cwise.h"
+	"src/Eigen2Support/CwiseOperators.h"
+	"src/Eigen2Support/TriangularSolver.h"
+	"src/Eigen2Support/Block.h"
+	"src/Eigen2Support/VectorBlock.h"
+	"src/Eigen2Support/Minor.h"
+	"src/Eigen2Support/MathFunctions.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+	<iostream>
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\macros.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\memory.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\meta.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\lazy.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\cwise.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\cwiseoperators.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\triangularsolver.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\block.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\vectorblock.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\minor.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\mathfunctions.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\lu
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/misc/Solve.h"
+	"src/misc/Kernel.h"
+	"src/misc/Image.h"
+	"src/LU/FullPivLU.h"
+	"src/LU/PartialPivLU.h"
+	"src/LU/PartialPivLU_MKL.h"
+	"src/LU/Determinant.h"
+	"src/LU/Inverse.h"
+	"src/LU/arch/Inverse_SSE.h"
+	"src/Eigen2Support/LU.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\misc\solve.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\misc\kernel.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\misc\image.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\lu\fullpivlu.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\lu\partialpivlu.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\lu\partialpivlu_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\lu\determinant.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\lu\inverse.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\lu\arch\inverse_sse.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\lu.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\cholesky
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/misc/Solve.h"
+	"src/Cholesky/LLT.h"
+	"src/Cholesky/LDLT.h"
+	"src/Cholesky/LLT_MKL.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\cholesky\llt.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\cholesky\ldlt.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\cholesky\llt_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+	<iostream>
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\qr
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	"Cholesky"
+	"Jacobi"
+	"Householder"
+	"src/misc/Solve.h"
+	"src/QR/HouseholderQR.h"
+	"src/QR/FullPivHouseholderQR.h"
+	"src/QR/ColPivHouseholderQR.h"
+	"src/QR/HouseholderQR_MKL.h"
+	"src/QR/ColPivHouseholderQR_MKL.h"
+	"src/Eigen2Support/QR.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+	"Eigenvalues"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\jacobi
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/Jacobi/Jacobi.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\jacobi\jacobi.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\householder
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/Householder/Householder.h"
+	"src/Householder/HouseholderSequence.h"
+	"src/Householder/BlockHouseholder.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\householder\householder.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\householder\householdersequence.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\householder\blockhouseholder.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\qr\householderqr.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\qr\fullpivhouseholderqr.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\qr\colpivhouseholderqr.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\qr\householderqr_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\qr\colpivhouseholderqr_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\qr.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\eigenvalues
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	"Cholesky"
+	"Jacobi"
+	"Householder"
+	"LU"
+	"Geometry"
+	"src/Eigenvalues/Tridiagonalization.h"
+	"src/Eigenvalues/RealSchur.h"
+	"src/Eigenvalues/EigenSolver.h"
+	"src/Eigenvalues/SelfAdjointEigenSolver.h"
+	"src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h"
+	"src/Eigenvalues/HessenbergDecomposition.h"
+	"src/Eigenvalues/ComplexSchur.h"
+	"src/Eigenvalues/ComplexEigenSolver.h"
+	"src/Eigenvalues/RealQZ.h"
+	"src/Eigenvalues/GeneralizedEigenSolver.h"
+	"src/Eigenvalues/MatrixBaseEigenvalues.h"
+	"src/Eigenvalues/RealSchur_MKL.h"
+	"src/Eigenvalues/ComplexSchur_MKL.h"
+	"src/Eigenvalues/SelfAdjointEigenSolver_MKL.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\geometry
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	"SVD"
+	"LU"
+	<limits>
+	"src/Geometry/OrthoMethods.h"
+	"src/Geometry/EulerAngles.h"
+	"src/Geometry/Homogeneous.h"
+	"src/Geometry/RotationBase.h"
+	"src/Geometry/Rotation2D.h"
+	"src/Geometry/Quaternion.h"
+	"src/Geometry/AngleAxis.h"
+	"src/Geometry/Transform.h"
+	"src/Geometry/Translation.h"
+	"src/Geometry/Scaling.h"
+	"src/Geometry/Hyperplane.h"
+	"src/Geometry/ParametrizedLine.h"
+	"src/Geometry/AlignedBox.h"
+	"src/Geometry/Umeyama.h"
+	"src/Geometry/arch/Geometry_SSE.h"
+	"src/Eigen2Support/Geometry/All.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\svd
+	"QR"
+	"Householder"
+	"Jacobi"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/misc/Solve.h"
+	"src/SVD/JacobiSVD.h"
+	"src/SVD/JacobiSVD_MKL.h"
+	"src/SVD/UpperBidiagonalization.h"
+	"src/Eigen2Support/SVD.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\svd\jacobisvd.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\svd\jacobisvd_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\svd\upperbidiagonalization.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\svd.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\orthomethods.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\eulerangles.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\homogeneous.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\rotationbase.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\rotation2d.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\quaternion.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\angleaxis.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\transform.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\translation.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\scaling.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\hyperplane.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\parametrizedline.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\alignedbox.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\umeyama.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\geometry\arch\geometry_sse.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\all.h
+	<limits>
+	"RotationBase.h"
+	"Rotation2D.h"
+	"Quaternion.h"
+	"AngleAxis.h"
+	"Transform.h"
+	"Translation.h"
+	"Scaling.h"
+	"AlignedBox.h"
+	"Hyperplane.h"
+	"ParametrizedLine.h"
+	"RotationBase.h"
+	"Rotation2D.h"
+	"Quaternion.h"
+	"AngleAxis.h"
+	"Transform.h"
+	"Translation.h"
+	"Scaling.h"
+	"AlignedBox.h"
+	"Hyperplane.h"
+	"ParametrizedLine.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\rotationbase.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\rotation2d.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\quaternion.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\angleaxis.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\transform.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\translation.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\scaling.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\alignedbox.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\hyperplane.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigen2support\geometry\parametrizedline.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\tridiagonalization.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\realschur.h
+	"./HessenbergDecomposition.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\hessenbergdecomposition.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\eigensolver.h
+	"./RealSchur.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\selfadjointeigensolver.h
+	"./Tridiagonalization.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\generalizedselfadjointeigensolver.h
+	"./Tridiagonalization.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\complexschur.h
+	"./HessenbergDecomposition.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\complexeigensolver.h
+	"./ComplexSchur.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\realqz.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\generalizedeigensolver.h
+	"./RealQZ.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\matrixbaseeigenvalues.h
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\realschur_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\complexschur_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+
+1393439718 c:\users\geeo\documents\github\pgprojoject1\minquadrados_v2\include\eigen-eigen-6b38706d90a9\eigen\src\eigenvalues\selfadjointeigensolver_mkl.h
+	"Eigen/src/Core/util/MKL_support.h"
+
