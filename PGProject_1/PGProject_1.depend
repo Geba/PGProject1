@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1402946940 source:c:\users\geeo\documents\github\pgprojoject1\pgproject_1\main.cpp
+	<windows.h>
+	<gl/glut.h>
+	<stdio.h>
+	<vector>
+	<math.h>
+
