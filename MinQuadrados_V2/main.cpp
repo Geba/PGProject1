@@ -27,24 +27,19 @@ double* minQuad(double x[],double y[] ,int ovo, int nPontos)
     }
     Y = AT*Yaux;
     VectorXd resp1(grau);
-    VectorXd resp2(grau);
-    VectorXd resp3(grau);
+   // VectorXd resp3(grau);
     VectorXd resp4(grau);
-    VectorXd resp5(grau);
-    VectorXd resp6(grau);
-    VectorXd resp7(grau);
     resp1  = M.partialPivLu().solve(Y);
-    resp2  = M.fullPivLu().solve(Y);
-    resp3  = M.householderQr().solve(Y);
-    resp6  = M.llt().solve(Y);
+    //resp3  = M.householderQr().solve(Y);
+
 
 
     cout<<"M:"<<endl<<M<<endl;
     cout<<"Y:"<<endl<<Y<<endl;
     cout<<"Resp1:"<<endl<<resp1<<endl;
-    cout<<"Resp2:"<<endl<<resp2<<endl;
-    cout<<"Resp3:"<<endl<<resp3<<endl;
-    cout<<"Resp6:"<<endl<<resp6<<endl;
+   // cout<<"Resp2:"<<endl<<resp2<<endl;
+    //cout<<"Resp3:"<<endl<<resp3<<endl;
+//    cout<<"Resp6:"<<endl<<resp6<<endl;
 
 
     double coef[grau];
@@ -73,9 +68,9 @@ int main()
     //cout << "Hello world!" <<endl;
     //minQuad(x, y, , 5);
     //minQuad(x, y, 4, 5);
- MatrixXd A = MatrixXd(3, 3);
-    VectorXd B = VectorXd(3);
-    /*A(0,0) = -0.421 ;
+    MatrixXd A = MatrixXd(4, 4);
+    VectorXd B = VectorXd(4);
+    A(0,0) = -0.421 ;
     A(0,1) =  0.784;
     A(0,2) =  0.279;
     A(1,0) =  0.448;
@@ -84,18 +79,26 @@ int main()
     A(2,0) =  0.421;
     A(2,1) =  0.784;
     A(2,2) =  -0.207;
+    A(0,3) = 10;
+    A(1,3) = 2;
+    A(2,3) = 8;
+    A(3,0) = 2;
+    A(3,1) = 3;
+    A(3,2) = 0;
+    A(3,3) = .76;
     B(0) = 0;
     B(1) = 1;
     B(2) = 0;
+    B(3) = 2;
     //a resposta é
-    */
-    VectorXd resp1(3);
-    VectorXd resp2(3);
-    VectorXd resp3(3);
-    VectorXd resp4(3);
-    VectorXd resp5(3);
-    VectorXd resp6(3);
-    VectorXd resp7(3);
+
+    VectorXd resp1(4);
+    VectorXd resp2(4);
+    VectorXd resp3(4);
+    VectorXd resp4(4);
+    VectorXd resp5(4);
+    VectorXd resp6(4);
+    VectorXd resp7(4);
     resp1  = A.partialPivLu().solve(B);
     resp2  = A.fullPivLu().solve(B);
     resp3  = A.householderQr().solve(B);
@@ -108,7 +111,7 @@ int main()
     cout<<"Resp2:"<<endl<<resp2<<endl;
     cout<<"Resp3:"<<endl<<resp3<<endl;
     cout<<"Resp6:"<<endl<<resp6<<endl;
-
+    cout<<(resp1(0)*A(1,0)+resp1(1)*A(1,1)+resp1(2)*A(1,2)+resp1(3)*A(1,3))<<endl;
 
 
 
