@@ -14,7 +14,7 @@ float auxT = 0.0f;
 int grauAtual = 0;
 int maxgrau = 0;
 bool comecou = false;
-int avaliacoes = 20000;
+int avaliacoes = 1000;
 
 
 
@@ -85,15 +85,13 @@ void addPoint(int x, int y)
     }
     else
     {
-        //printf("\nPor favor, digite o t desse ponto: ");
-        // scanf("%f", &aux.t);
+        printf("\nPor favor, digite o t desse ponto: ");
+       scanf("%f", &aux.t);
         comecou  = true;
-        if(userPoints.size()>0)
-            grauAtual++;
         maxgrau++;
     }
     userPoints.push_back(aux);
-    igualarPoints();
+    //igualarPoints();
     printUserPoints();
 
 
@@ -153,32 +151,38 @@ MatrixXd getMatriz(int grau)
     coef.setZero();
     int aux = grau;
     //for de todos os b's e já transpõe
-    for (int i = 0; i < grau+1; i++)
-    {
-        if(i > 0)
-        {
+    for (int i = 0; i < grau+1; i++){
+        if(i > 0){
             aux = aux- 1;
         }
         //cout << endl;
         //preenchendo as linhas ou seja b0, b1...
-        for (int j = 0; j < grau + 1; j++)
-        {
+        for (int j = 0; j < grau + 1; j++){
 
-            if((j%2!=0&&i%2==0)||(j%2==0&&i%2!=0))
-             {
+            /*if(((j%2!=0&&i%2==0)||(j%2==0&&i%2!=0))){
                 double auxdentu = (combinacao(aux, j));
                 if (auxdentu != 0)
                     coef(grau - j,i) = (-1)*(combinacao(aux, j));
             }
-            else
-            {
+            else{*/
                 coef(grau - j,i) = combinacao(aux, j);
-            }
+            //}
             coef(grau - j,i)*=combinacao(grau,i);
         }
+
+    }
+
+    for (int i =0;i<=grau;i++){
+        for( int j = 0;j<=grau;j++){
+            if(((i%2!=0&&j%2==0)||(i%2==0&&j%2!=0))&&(coef(i,j)!=0)){
+                    coef(i, j) = (-1)*(coef(i, j));
+            }
+        }
+
     }
     return coef;// matriz ta pronta agora
 }
+
 VectorXd minQuad(double x[],double y[] ,int ovo, int nPontos)
 {
     int grau = ovo + 1;
@@ -305,6 +309,10 @@ vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Control
 
 void refresh()
 {
+     // Limpa a janela com a cor
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(2, 2, 2);//nao é a cor de fundo
+    glFlush();
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     glClear(GL_COLOR_BUFFER_BIT); // Limpa a janela de visualização com a cor de fundo especificada
@@ -345,18 +353,19 @@ void refresh()
 
 
     glBegin(GL_LINES);
-    for(int i =1; i < userPoints.size(); i++)
+    for(int i =1; i < PB.size(); i++)
     {
-        point u = userPoints[i-1];
+        Ponto_de_Controle u = PB[i-1];
         glColor3f(26.0f/255.0f, 1.0f, 188.0f/255.0f);//cor da linha
-        glVertex2i(userPoints[i].x,tamanhoJanela-userPoints[i].y);
+        glVertex2i(PB[i].x,tamanhoJanela-PB[i].y);
         glVertex2i(u.x,tamanhoJanela-u.y);
-        //u = userPoints[i];
+        u = PB[i];
     }
 
 
 
     glEnd();
+
     /*
         glBegin(GL_LINE_STRIP);
             for (int x = -4.0; x <4.0; x+=0.1){
@@ -374,22 +383,13 @@ void refresh()
 
 }
 
-void AlterarCena(void)
-{
-    // Limpa a janela com a cor
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(2, 2, 2);//nao é a cor de fundo
-    glFlush();
-}
-
 void MouseClick (int button, int estado, int x, int y)
 {
-    float intervalo = 5.0f;
-    float intervaloMin = -5.0f;
+    float intervalo = 8.0f;
+    float intervaloMin = -8.0f;
     switch (button)
     {
     case GLUT_LEFT_BUTTON:
-
      //   printf("ESQ ");
         if (estado == GLUT_DOWN)
         {
@@ -402,15 +402,15 @@ void MouseClick (int button, int estado, int x, int y)
                     auxT = userPoints[i].t;
                     temT = true;
                     userPoints.erase(userPoints.begin() + i);
+//                    userPoints[i].x = x;userPoints[i].y = y;
 
                 }
             }
         }
-
-
        // printf("Pressionado na posição: ");
         if (estado == GLUT_UP)
         {
+
             //printf("Posiçao solta: ");
             addPoint(x,y);
         }
@@ -421,9 +421,7 @@ void MouseClick (int button, int estado, int x, int y)
     case GLUT_MIDDLE_BUTTON:
         //printf("MEIO ");
         break;
-
     }
-
 //    Desenha(x,y);
     refresh();
 }
@@ -497,7 +495,13 @@ void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 
     refresh();
 }
+void configure(){
+    cout<<"Digite o grau desejado para as curvas desenhadas"<<endl;
+      scanf("%d", &grauAtual);
+      cout<<"Digite a quantidade de avaliações desejadas para o algoritmo de Decastelljeau"<<endl;
+      scanf("%d", &avaliacoes);
 
+}
 
 int main(void)
 {
@@ -508,34 +512,11 @@ int main(void)
     PC.clear();PB.clear();userPoints.clear();
     //glutDisplayFunc(Desenha);
     glutReshapeFunc(AlteraTamanhoJanela);
-    // movimento SEM botão pressionado
-    // glutPassiveMotionFunc(MouseAndandoNaoApertando);
-    glutDisplayFunc(AlterarCena);
-    // movimento COM botão pressionado
-    //glutMotionFunc(MouseAndandoApertando);
-    // em um botão
+    glutDisplayFunc(refresh);
     glutMouseFunc(MouseClick);
     Inicializa();
-    MatrixXd test = getMatriz(2.0);
-    cout<<test<<endl;
-     test = getMatriz(3.0);
-    cout<<test<<endl;
-    test = getMatriz(4.0);
-    cout<<test<<endl;
-    //chama os minimos quadrados e pede o grau da bezier
-    //MinimosQuadrados();
+
+    configure();
     glutMainLoop();
 
 }
-
-
-
-
-
-// Setup the rendering state
-/*
-void CorTela(void)
-{
-    glClearColor(0, 48, 64, 1.0f);
-}
-*/
