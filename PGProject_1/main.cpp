@@ -14,6 +14,7 @@ float auxT = 0.0f;
 int grauAtual = 0;
 int maxgrau = 0;
 bool comecou = false;
+int avaliacoes = 20000;
 
 struct point
 {
@@ -33,15 +34,32 @@ vector <point> userPoints;
 vector<Ponto_de_Controle> PC ;
 vector<Ponto_de_Controle> PB ;
 
-void printUserPoints(){
+void printUserPoints()
+{
     printf("\n(x, y, t)\n");
     for(unsigned int i=0; i< userPoints.size(); i++)
     {
         printf("%d, %d, %f\n", userPoints[i].x,userPoints[i].y, userPoints[i].t);
     }
 }
-void printGrauAtual(){
-cout<<"Grau atual: "<<grauAtual<<endl;
+
+void printGrauAtual()
+{
+    cout<<"Grau atual: "<<grauAtual<<endl;
+}
+
+
+void igualarPoints()
+{
+
+    if(userPoints.size()>0){
+        double step = 1.0/(userPoints.size()-1);
+        for (int i = 0; i<userPoints.size();i++){
+        userPoints[i].t = i*step;
+
+            }
+    }
+
 }
 void addPoint(int x, int y)
 {
@@ -55,62 +73,22 @@ void addPoint(int x, int y)
     }
     else
     {
-        printf("\nPor favor, digite o t desse ponto: ");
-          scanf("%f", &aux.t);
-
+        //printf("\nPor favor, digite o t desse ponto: ");
+        // scanf("%f", &aux.t);
         comecou  = true;
         if(userPoints.size()>0)
             grauAtual++;
-            maxgrau++;
+        maxgrau++;
     }
     userPoints.push_back(aux);
+    igualarPoints();
     printUserPoints();
-    //printGrauAtual();
+
 
 }
 
-
-
-
-// Função desenhar
-
-/*void Desenha(int x, int y)
-{
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    // Limpa a janela de visualização com a cor de fundo especificada
-    glClear(GL_COLOR_BUFFER_BIT);
-    // Desenha um ponto preenchido com a cor corrente
-    glPointSize(10);
-    glLineWidth(2);
-    glBegin(GL_POINTS);
-    glColor3f(0.0f, 97.0f/255.0f, 127.0f/255.0f);//cor do ponto
-    glVertex2i(x,tamanhoJanela-y);
-    glEnd();
-    // Executa os comandos OpenGL
-    glFlush();
-}*/
-
-
 // Called to draw scene
 //Essa tem que estar aqui
-
-
-
-/*
-void MinimosQuadrados()
-{
-    //mandar o cidadão inserir um grau
-    int npontos = userPoints.size();
-    int grau;
-    scanf("%d",grau);
-    if(grau > npontos) {}
-
-    printf("%d", npontos);
-    //int[][] MSomatorio = MSomatorio[npontos][];
-
-
-}*/
 
 void MouseAndandoNaoApertando (int x, int y)
 {
@@ -160,7 +138,7 @@ double combinacao(double n, double p)
 MatrixXd getMatriz(int grau)
 {
     MatrixXd coef(grau+1,grau+1);
-   coef.setZero();
+    coef.setZero();
     int aux = grau;
     //for de todos os b's e já transpõe
     for (int i = 0; i < grau+1; i++)
@@ -233,13 +211,15 @@ VectorXd minQuad(double x[],double y[] ,int ovo, int nPontos)
 }
 //minQuad(double x[],double y[] ,int ovo, int nPontos)
 
-vector<Ponto_de_Controle> getControlPoints(int grau, vector<point> usrPoints ){
+vector<Ponto_de_Controle> getControlPoints(int grau, vector<point> usrPoints )
+{
     int size  = usrPoints.size();
     double x[size];
     double y[size];
     double t[size];
     //inicializando
-    for (int i =0;i<size;i++){
+    for (int i =0; i<size; i++)
+    {
         x[i] = usrPoints[i].x;
         y[i] = usrPoints[i].y;
         t[i] = usrPoints[i].t;
@@ -248,31 +228,34 @@ vector<Ponto_de_Controle> getControlPoints(int grau, vector<point> usrPoints ){
     VectorXd ycoef;
     VectorXd xCtrlPnts;
     VectorXd yCtrlPnts;
-    xcoef.setZero(); ycoef.setZero();
+    xcoef.setZero();
+    ycoef.setZero();
     xCtrlPnts.setZero();
     yCtrlPnts.setZero();
     //inicializando
-    xcoef = minQuad(x,t, grau, size);
-    cout<<xcoef<<endl;
-    ycoef = minQuad(y,t, grau, size);
+    xcoef = minQuad(t,x, grau, size);
+    //cout<<xcoef<<endl;
+    ycoef = minQuad(t,y, grau, size);
+    //cout<<ycoef<<endl;
     MatrixXd atcoef = getMatriz(grau);
     xCtrlPnts = atcoef.partialPivLu().solve(xcoef);
     yCtrlPnts = atcoef.partialPivLu().solve(ycoef);
     vector<Ponto_de_Controle> pcs;
     pcs.clear();
-    for (int i = 0;i<=grau;i++){
+    for (int i = 0; i<=grau; i++)
+    {
         Ponto_de_Controle pc;
         pc.x = xCtrlPnts[i];
         pc.y = yCtrlPnts[i];
         pcs.push_back(pc);
-        }
-        return pcs;
+    }
+    return pcs;
 }
 
 
 
 
-vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Controle> Pontos_Controle)
+vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Controle> Pontos_Controle)//decastelljeau
 {
     vector<Ponto_de_Controle> Q ;
 //    cout<<"chamou uma";
@@ -303,6 +286,9 @@ vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Control
     return retorno;
 }
 
+
+
+
 void refresh()
 {
     glMatrixMode(GL_MODELVIEW);
@@ -312,6 +298,7 @@ void refresh()
     // Desenha um ponto preenchido com a cor corrente
     glPointSize(8);
     glLineWidth(2);
+   // igualarPoints();
     glBegin(GL_POINTS);
     for(int i =0; i < userPoints.size(); i++)
     {
@@ -336,7 +323,7 @@ void refresh()
     PC.push_back(pc);
     */
     PC = getControlPoints(grauAtual,userPoints);
-    PB = getCurvePoints(2000,PC);
+    PB = getCurvePoints(avaliacoes,PC);
     glColor3f(0.0f, 0.5f, 0.5f);
     glBegin(GL_POINTS);
     glPointSize(3);
@@ -380,7 +367,7 @@ void refresh()
     */
 
 
-getControlPoints(grauAtual,userPoints);
+    getControlPoints(grauAtual,userPoints);
     //glVertex2i(x,tamanhoJanela-y);
     //Executa os comandos OpenGL
     glFlush();
@@ -403,7 +390,7 @@ void MouseClick (int button, int estado, int x, int y)
     {
     case GLUT_LEFT_BUTTON:
 
-        printf("ESQ ");
+     //   printf("ESQ ");
         if (estado == GLUT_DOWN)
         {
             bool existe = false;
@@ -421,7 +408,7 @@ void MouseClick (int button, int estado, int x, int y)
         }
 
 
-        printf("Pressionado na posição: ");
+       // printf("Pressionado na posição: ");
         if (estado == GLUT_UP)
         {
             //printf("Posiçao solta: ");
@@ -429,10 +416,10 @@ void MouseClick (int button, int estado, int x, int y)
         }
         break;
     case GLUT_RIGHT_BUTTON:
-        printf("DIR ");
+        //printf("DIR ");
         break;
     case GLUT_MIDDLE_BUTTON:
-        printf("MEIO ");
+        //printf("MEIO ");
         break;
 
     }
@@ -530,7 +517,7 @@ int main(void)
     Inicializa();
     MatrixXd test = getMatriz(4.0);
     cout<<test;
-       //chama os minimos quadrados e pede o grau da bezier
+    //chama os minimos quadrados e pede o grau da bezier
     //MinimosQuadrados();
     glutMainLoop();
 
