@@ -15,7 +15,7 @@ int grauAtual = 0;
 int maxgrau = 0;
 bool comecou = false;
 int avaliacoes = 1000;
-bool andando;
+
 
 
 struct point
@@ -383,18 +383,6 @@ void refresh()
 
 }
 
-void AtualizarCurva(int i){
-    while(false){
-        int x,y;
-        //x = ;
-        //y = ;
-        cout<<"teste";
-        //PB[i].x = x;
-        //PB[i].y = y;
-    }
-    cout<<"oi"<<endl;
-}
-
 void MouseClick (int button, int estado, int x, int y)
 {
     float intervalo = 8.0f;
@@ -402,6 +390,7 @@ void MouseClick (int button, int estado, int x, int y)
     switch (button)
     {
     case GLUT_LEFT_BUTTON:
+     //   printf("ESQ ");
         if (estado == GLUT_DOWN)
         {
             bool existe = false;
@@ -413,9 +402,6 @@ void MouseClick (int button, int estado, int x, int y)
                     auxT = userPoints[i].t;
                     temT = true;
                     userPoints.erase(userPoints.begin() + i);
-                    andando = true;
-                    AtualizarCurva(i);
-                    return;
 //                    userPoints[i].x = x;userPoints[i].y = y;
 
                 }
@@ -424,7 +410,7 @@ void MouseClick (int button, int estado, int x, int y)
        // printf("Pressionado na posição: ");
         if (estado == GLUT_UP)
         {
-            andando = false;
+
             //printf("Posiçao solta: ");
             addPoint(x,y);
         }
