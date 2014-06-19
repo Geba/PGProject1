@@ -200,11 +200,11 @@ VectorXd minQuad(double x[],double y[] ,int ovo, int nPontos)
     // cout<<"Resp2:"<<endl<<resp2<<endl;
     //cout<<"Resp3:"<<endl<<resp3<<endl;
 //    cout<<"Resp6:"<<endl<<resp6<<endl;
-    double coef[grau];
-    for(int k = 0; k<grau; k++)
-    {
-        coef[k] = resp1(k);
-    }
+    //double coef[grau];
+    //for(int k = 0; k<grau; k++)
+    //{
+        //coef[k] = resp1(k);
+    //}
 
     //cout<<"minQuadResp:" <<resp1<<endl;
     return resp1;
@@ -213,12 +213,12 @@ VectorXd minQuad(double x[],double y[] ,int ovo, int nPontos)
 
 vector<Ponto_de_Controle> getControlPoints(int grau, vector<point> usrPoints )
 {
-    int size  = usrPoints.size();
-    double x[size];
-    double y[size];
-    double t[size];
+    int size_  = usrPoints.size();
+    double x[size_];
+    double y[size_];
+    double t[size_];
     //inicializando
-    for (int i =0; i<size; i++)
+    for (int i =0; i<size_; i++)
     {
         x[i] = usrPoints[i].x;
         y[i] = usrPoints[i].y;
@@ -233,9 +233,9 @@ vector<Ponto_de_Controle> getControlPoints(int grau, vector<point> usrPoints )
     xCtrlPnts.setZero();
     yCtrlPnts.setZero();
     //inicializando
-    xcoef = minQuad(t,x, grau, size);
+    xcoef = minQuad(t,x, grau, size_);
     //cout<<xcoef<<endl;
-    ycoef = minQuad(t,y, grau, size);
+    ycoef = minQuad(t,y, grau, size_);
     //cout<<ycoef<<endl;
     MatrixXd atcoef = getMatriz(grau);
     xCtrlPnts = atcoef.partialPivLu().solve(xcoef);
