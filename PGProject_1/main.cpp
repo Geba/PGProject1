@@ -16,6 +16,8 @@ int maxgrau = 0;
 bool comecou = false;
 int avaliacoes = 20000;
 
+
+
 struct point
 {
     int x;
@@ -41,6 +43,16 @@ void printUserPoints()
     {
         printf("%d, %d, %f\n", userPoints[i].x,userPoints[i].y, userPoints[i].t);
     }
+}
+
+void printPontosControle(vector<Ponto_de_Controle> v){
+    printf("Pontos de controle\n(x, y)\n");
+    for(unsigned int i=0; i< v.size(); i++)
+    {
+        printf("%d, %d, \n", v[i].x,v[i].y);
+    }
+
+
 }
 
 void printGrauAtual()
@@ -151,8 +163,9 @@ MatrixXd getMatriz(int grau)
         //preenchendo as linhas ou seja b0, b1...
         for (int j = 0; j < grau + 1; j++)
         {
-            if(j%2!=0)
-            {
+
+            if((j%2!=0&&i%2==0)||(j%2==0&&i%2!=0))
+             {
                 double auxdentu = (combinacao(aux, j));
                 if (auxdentu != 0)
                     coef(grau - j,i) = (-1)*(combinacao(aux, j));
@@ -161,6 +174,7 @@ MatrixXd getMatriz(int grau)
             {
                 coef(grau - j,i) = combinacao(aux, j);
             }
+            coef(grau - j,i)*=combinacao(grau,i);
         }
     }
     return coef;// matriz ta pronta agora
@@ -293,45 +307,31 @@ void refresh()
 {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    // Limpa a janela de visualização com a cor de fundo especificada
-    glClear(GL_COLOR_BUFFER_BIT);
-    // Desenha um ponto preenchido com a cor corrente
+    glClear(GL_COLOR_BUFFER_BIT); // Limpa a janela de visualização com a cor de fundo especificada
     glPointSize(8);
     glLineWidth(2);
    // igualarPoints();
     glBegin(GL_POINTS);
-    for(int i =0; i < userPoints.size(); i++)
+    for(int i =0; i < userPoints.size(); i++)//desenhas pontos inseridos pelo usuario
     {
-        //  glColor3f(0.0f, 97.0f/255.0f, 127.0f/255.0f);//cor do ponto
-        glColor3f(1.0f, 1.0f, 1.0f);//cor do ponto
+        glColor3f(1.0f, 1.0f, 1.0f);//Branco
         glVertex2i(userPoints[i].x,tamanhoJanela-userPoints[i].y);
-
     }
     glEnd();
-    // glBegin(GL_LINE_STRIP);
-    //vectorXf coeficientes = minQuad()
+    if(userPoints.size()>0){
 
-    /*
-    pc.x = 203;
-    pc.y = 280;
-    PC.push_back(pc);
-    pc.x = 123;
-    pc.y = 157;
-    PC.push_back(pc);
-    pc.x = 235;
-    pc.y = 351;
-    PC.push_back(pc);
-    */
+    //calcula e desenha os pontos de controle
     PC = getControlPoints(grauAtual,userPoints);
-    PB = getCurvePoints(avaliacoes,PC);
-    glColor3f(0.0f, 0.5f, 0.5f);
+    glColor3f(1.f, (203.0f/255.0f), 0.0f);//amarelo
     glBegin(GL_POINTS);
-    glPointSize(3);
+    glPointSize(4);
     for(int i =0; i < PC.size(); i++)
     {
         glVertex2i(PC[i].x,tamanhoJanela-PC[i].y);
     }
     glEnd();
+    printPontosControle(PC);
+    PB = getCurvePoints(avaliacoes,PC);
     glPointSize(2);
     glBegin(GL_POINTS);
     for(int i =0; i < PB.size(); i++)
@@ -365,9 +365,9 @@ void refresh()
     }
     glEnd();
     */
+}
 
-
-    getControlPoints(grauAtual,userPoints);
+ //   getControlPoints(grauAtual,userPoints);
     //glVertex2i(x,tamanhoJanela-y);
     //Executa os comandos OpenGL
     glFlush();
@@ -504,7 +504,8 @@ int main(void)
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(900,700);
     glutInitWindowPosition(1000,100);
-    glutCreateWindow("Quadrado");
+    glutCreateWindow("PG");
+    PC.clear();PB.clear();userPoints.clear();
     //glutDisplayFunc(Desenha);
     glutReshapeFunc(AlteraTamanhoJanela);
     // movimento SEM botão pressionado
@@ -515,8 +516,12 @@ int main(void)
     // em um botão
     glutMouseFunc(MouseClick);
     Inicializa();
-    MatrixXd test = getMatriz(4.0);
-    cout<<test;
+    MatrixXd test = getMatriz(2.0);
+    cout<<test<<endl;
+     test = getMatriz(3.0);
+    cout<<test<<endl;
+    test = getMatriz(4.0);
+    cout<<test<<endl;
     //chama os minimos quadrados e pede o grau da bezier
     //MinimosQuadrados();
     glutMainLoop();
