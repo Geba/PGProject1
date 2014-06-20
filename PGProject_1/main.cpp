@@ -1,3 +1,28 @@
+/*
+Computer Science Center - CIn
+Federal University of Pernambuco - UFPE
+2014.1
+
+
+@authors:
+Daniel Sulman de Albuquerque Eloi - @dsae
+Dimas Albuquerque Mendes - @dam4
+Gabriela Mota de Lacerda - @gml
+Geovane Silva Pereira - @gsp
+
+
+
+Descrição: o usuário entra via mouse com os pontos ordenados
+(do tipo (ti,fi),valor de t e valor de função). O usuário escolhe
+o grau da curva e o sistema deve apresentar a curva de Bézier com
+o grau desejado que melhor se aproxima dos pontos dados,
+pelo critério dos mínimos quadrados. O usuário poderá mover o ponto
+e o sistema deve responder em tempo real com o desenho da curva mais
+próxima. O sistema também deve apresentar os pontos de controle da curva
+encontrada. Este projeto pode utilizar resolvedores prontos  de sistemas lineares
+de grau arbitrário.
+*/
+
 #include <windows.h>
 #include <gl/glut.h>
 #include <stdio.h>
@@ -5,6 +30,12 @@
 #include <math.h>
 #include <iostream>
 #include <Eigen/Dense>
+#include<cmath>
+#include <cstdlib>
+#include <conio.h>
+
+
+
 using namespace std;
 using namespace Eigen;
 int tamanhoJanela;
@@ -21,7 +52,6 @@ const int DELETING = 4;
 int estadoUser = NOTHING;
 int indiceSelecionado = 0;
 bool mudou = true;
-
 
 struct point
 {
@@ -47,21 +77,28 @@ void printUserPoints()
         printf("%d, %d, %f\n", userPoints[i].x,userPoints[i].y, userPoints[i].t);
     }
 }
+void clearConsole()
+{
+    std::system("cls");
+
+}
+
+
 
 void printControlPoints()
 {
     printf("Pontos de controle\n(x, y)\n");
     for(int i=0; i< PC.size(); i++)
     {
-        printf("%d, %d, \n", PC[i].x,PC[i].y);
+        printf("%d, %d \n", PC[i].x,PC[i].y);
     }
 }
 void printBezierPoints()
 {
-    printf("Pontos de controle\n(x, y)\n");
+    printf("Pontos da Bezier\n(x, y)\n");
     for(int i=0; i< PB.size(); i++)
     {
-        printf("%d, %d, \n", PB[i].x,PB[i].y);
+        printf("%d, %d \n", PB[i].x,PB[i].y);
     }
 }
 
@@ -151,7 +188,7 @@ void Inicializa (void)
     glClearColor(0.0f,48.0f/255.0f, 64.0f/255.0f, 1.0f);
     estadoUser = NOTHING;
 }
-double fatorial(double k)
+double fatorial1(double k)
 {
     if(k == 0)
     {
@@ -159,9 +196,48 @@ double fatorial(double k)
     }
     else
     {
-        return k *fatorial(k-1);
+        return k *fatorial1(k-1);
     }
 }
+long double resultados[1000] = {1,1,0};
+bool resultadosAchou[1000] = {true,true,false};
+
+long double fatorial(int n)
+{
+    if (resultadosAchou[n]) {
+        return resultados[n];
+    } else {
+    if (n == 0 || n == 1)
+    {
+        return 1;
+    }
+    else
+    {
+            if (resultadosAchou[n - 1])
+            {
+                resultados[n] = (floor(resultados[n-1] + 0.5) * (double) n);
+                resultadosAchou[n] = true;
+                return resultados[n];
+            }
+            else
+            {
+                resultados[n] = ((n) * fatorial(n-1));
+                return resultados[n];
+            }
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
 double combinacao(double n, double p)
 {
     if(p > n)
@@ -291,7 +367,7 @@ vector<Ponto_de_Controle> getControlPoints(int grau, vector<point> usrPoints )
     return pcs;
 }
 
-vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Controle> Pontos_Controle)//decastelljeau
+vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Controle> Pontos_Controle)//De Casteljau
 {
     vector<Ponto_de_Controle> Q ;
 //    cout<<"chamou uma";
@@ -330,7 +406,7 @@ void refresh()
     glFlush();
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    glClear(GL_COLOR_BUFFER_BIT); // Limpa a janela de visualização com a cor de fundo especificada
+    glClear(GL_COLOR_BUFFER_BIT); // Limpa a janela de visualizacao com a cor de fundo especificada
     glPointSize(8);
     glLineWidth(2);
     //deseha pontos do usuário
@@ -493,27 +569,42 @@ void configure()
 {
     cout<<"Digite o grau desejado para as curvas desenhadas"<<endl;
     scanf("%d", &grauAtual);
-    cout<<"Digite a quantidade de avaliações desejadas para o algoritmo de Decastelljeau"<<endl;
+    cout<<"Digite a quantidade de avaliacoes desejadas para o algoritmo de De Casteljau"<<endl;
     scanf("%d", &avaliacoes);
 
+}
+void bemVindo(){
+    cout<<"A qualquer momento, voce pode digitar qualquer uma dessa teclas"<<endl
+    <<"p: Entra no menu de impressao de valores"<<endl
+    <<"a: Entra no menu de Configuracao"<<endl
+    <<"c: Limpa o console"<<endl
+    <<"r: Reseta o sistema, use para desenhar uma nova curva"<<endl
+    <<"e: Sai do programa"<<endl<<endl;
+}
+void reset(){
+    userPoints.clear();
+    mudou=true;
+    refresh();
+    clearConsole();
+    bemVindo();
 }
 
 void hadleKeyboard(unsigned char key, int x, int y)
 {
     /*Comandos:
     p = print
-    c: printControlPoints//ffeita
-    u: printUserPoints//feita//
-    b: printBezierPoints//feita
-    g: printGrauAtual;//feita
-    a: printQntAvaliacoes;//feita
-    t: printAutoTValue;//feita
-    v: printAutoGrauValue//feita
+    c: printControlPoints
+    u: printUserPoints
+    b: printBezierPoints
+    g: printGrauAtual
+    a: printQntAvaliacoes
+    t: printAutoTValue
+    v: printAutoGrauValue
 
     a = alterar
-    g: alterarGrauAtual;
+    g: alterarGrauAtual
     h: alterarqntAvaliacoes
-    t: alterarAutoTValue;
+    t: alterarAutoTValue
     v: alterarAutograuValue
 
     c =  clearConsole
@@ -526,62 +617,73 @@ void hadleKeyboard(unsigned char key, int x, int y)
     }
     else if(key == 'p')
     {
-        char escolha;
-        cout<<"digite a sua opção: "<<endl
+        cout<<"Digite a sua opcao: "<<endl
         <<"c: Imprimir Pontos de Controle"<<endl
         <<"u: Imprimir Pontos Inseridos"<<endl
         <<"b: Imprimir Pontos da Bezier"<<endl
         <<"g: Imprimir Grau da Curva"<<endl
-        <<"a: Imprimir Quantidade de Avalições"<<endl
-        <<"t: Imprimir Ajuste automatico de Parametro"<<endl
-        <<"v: Imprimir Ajuste Automatico de Grau"<<endl;
-        scanf("%c", &escolha);
+        <<"a: Imprimir Quantidade de Avalicoes"<<endl
+        <<"t: Imprimir Ajuste Automatico de Parametro"<<endl
+        <<"v: Imprimir Ajuste Automatico de Grau"<<endl<<endl;
+        //char escolha;
+        char escolha = getch();
+        //scanf("%c", &escolha);
         if(escolha=='c')
         {
             printControlPoints();
+            bemVindo();
         }
         else if(escolha=='u')
         {
-                        printUserPoints();
+            printUserPoints();
+            bemVindo();
         }
         else if(escolha=='b')
         {
-                printBezierPoints();
+            printBezierPoints();
+              bemVindo();
         }
         else if(escolha=='g')
         {
                 printGrauAtual();
+                bemVindo();
         }
         else if(escolha=='a')
         {
                 printQntAvaliacoes();
+                bemVindo();
         }
         else if(escolha=='t')
         {
                 printAutoTValue();
+                bemVindo();
         }
         else if(escolha=='v')
         {
                 printAutoGrauValue();
+                bemVindo();
         }else{
             cout<<"Opcao Não encontrada!"<<endl;
+            bemVindo();
         }
     }
     else if(key == 'a')
     {
-        char escolha;
-        cout<<"digite a sua opção: "<<endl
+
+        cout<<"Digite a sua opcao: "<<endl
         <<"g: Alterar grau da curva"<<endl
-        <<"h: Alterar Quantidade de Avaliações"<<endl
-        <<"t: Ligar ou desligar Ajuste Automático de Parametro:"<<endl
-        <<"v: Ligar ou desligar Ajuste Automatico de Grau"<<endl;
-        scanf("%c", &escolha);
+        <<"a: Alterar quantidade de avaliacoes"<<endl
+        <<"t: Ligar ou desligar ajuste automatico de parametro:"<<endl
+        <<"v: Ligar ou desligar ajuste automatico de grau"<<endl <<endl;
+        char escolha = getch();
+        //scanf("%c", &escolha);
         if(escolha=='v')
         {
             printAutoGrauValue();
             cout<<"Digite a para ativar, d para desativar"<<endl;
             char aux;
             scanf("%c", &aux);
+
             if(aux =='a')
             {
                 autoGrau=true;
@@ -590,7 +692,8 @@ void hadleKeyboard(unsigned char key, int x, int y)
             {
                 autoGrau = false;
             }
-
+        cout<<endl;
+        bemVindo();
         }
         else if(escolha=='t')
         {
@@ -606,34 +709,44 @@ void hadleKeyboard(unsigned char key, int x, int y)
             {
                 autoT = false;
             }
+            cout<<endl;
+            bemVindo();
         }
         else if (escolha=='g')
         {
             printGrauAtual();
             cout<<"Digite o novo valor para o grau da curva"<<endl;
+            autoGrau = false;
             scanf("%d", &grauAtual);
+            cout<<endl<<"O ajuste automatico de grau foi desativado"<<endl;
             if (grauAtual>(userPoints.size()-1)){
-            cout<<"Note que um grau de curva maior ou igual que a quantidade de pontos  deixará a curva instável"<<endl;
+            cout<<"Note que um grau de curva maior ou igual que a quantidade de pontos  deixara a curva instavel"<<endl;
             }
+        cout<<endl;
+        //bemVindo();
         }
         else if(escolha=='a')
         {
             printQntAvaliacoes();
-            cout<<"Digite a nova quantidade de avaliações do algoritmo de De Casteljau"<<endl;
+            cout<<"Digite a nova quantidade de avaliacoes do algoritmo de De Casteljau"<<endl;
             scanf("%d", &avaliacoes);
+        }else{
+            cout<<"Opcao Não encontrada!"<<endl;
+
         }
         mudou = true;
+    cout<<endl;
+    bemVindo();
     }
     else if(key == 'c')
     {
-        //clearConsole();
+        clearConsole();
+        bemVindo();
+    }
+    else if(key=='r'){
+        reset();
     }
 }
-
-
-
-
-
 
 int main(void)
 {
@@ -650,6 +763,7 @@ int main(void)
     glutMotionFunc(mouseClicking);
     glutKeyboardUpFunc(hadleKeyboard);
     Inicializa();
+    reset();
     glutMainLoop();
 
 }

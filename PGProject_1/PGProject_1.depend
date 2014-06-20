@@ -6,7 +6,7 @@
 	<vector>
 	<math.h>
 
-1403278207 source:c:\users\geeo\documents\github\pgproject1\pgproject_1\main.cpp
+1403291483 source:c:\users\geeo\documents\github\pgproject1\pgproject_1\main.cpp
 	<windows.h>
 	<gl/glut.h>
 	<stdio.h>
@@ -14,6 +14,9 @@
 	<math.h>
 	<iostream>
 	<Eigen/Dense>
+	<cmath>
+	<cstdlib>
+	<conio.h>
 
 1403215668 c:\users\geeo\documents\github\pgproject1\pgproject_1\include\eigen-eigen-6b38706d90a9\eigen\dense
 	"Core"
