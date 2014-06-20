@@ -8,14 +8,18 @@
 using namespace std;
 using namespace Eigen;
 int tamanhoJanela;
-int a ,b ;
-bool temT = false;
-float auxT = 0.0f;
-int grauAtual = 0;
+int grauAtual = 1;
 int maxgrau = 0;
-bool comecou = false;
-int avaliacoes = 1000;
-
+int avaliacoes = 100;
+bool autoT = true;//gera os Ts Na ordem em que foram criados
+bool autoGrau = true;//aproxiiima os pontos para uma curva de grau = nPontos-1
+//estados do mouse
+const int NOTHING = 1;
+const int SELECTING = 2;
+const int ADDING = 3;
+const int DELETING = 4;
+int estadoUser = NOTHING;
+int indiceSelecionado = 0;
 
 
 struct point
@@ -24,14 +28,12 @@ struct point
     int y;
     float t;
 };
-
 typedef struct ponto_controle
 {
     int x;
     int y;
 
 } Ponto_de_Controle;
-
 vector <point> userPoints;
 vector<Ponto_de_Controle> PC ;
 vector<Ponto_de_Controle> PB ;
@@ -45,81 +47,77 @@ void printUserPoints()
     }
 }
 
-void printPontosControle(vector<Ponto_de_Controle> v){
+void printControlPoints()
+{
     printf("Pontos de controle\n(x, y)\n");
-    for(unsigned int i=0; i< v.size(); i++)
+    for(int i=0; i< PC.size(); i++)
     {
-        printf("%d, %d, \n", v[i].x,v[i].y);
+        printf("%d, %d, \n", PC[i].x,PC[i].y);
     }
-
-
+}
+void printBezierPoints()
+{
+    printf("Pontos de controle\n(x, y)\n");
+    for(int i=0; i< PB.size(); i++)
+    {
+        printf("%d, %d, \n", PB[i].x,PB[i].y);
+    }
 }
 
 void printGrauAtual()
 {
     cout<<"Grau atual: "<<grauAtual<<endl;
 }
-
-
 void igualarPoints()
 {
-
-    if(userPoints.size()>0){
+    if(userPoints.size()>0)
+    {
         double step = 1.0/(userPoints.size()-1);
-        for (int i = 0; i<userPoints.size();i++){
-        userPoints[i].t = i*step;
-
-            }
+        for (int i = 0; i<userPoints.size(); i++)
+        {
+            userPoints[i].t = i*step;
+        }
     }
-
 }
+
 void addPoint(int x, int y)
 {
     point aux;
     aux.x = x;
-    aux.y =y;
-    if(temT)
+   aux.y =y;
+      userPoints.push_back(aux);
+    if(autoT)
     {
-        aux.t = auxT;
-        temT = false;
+        igualarPoints();
     }
-    else
+    if(autoGrau)
     {
-        printf("\nPor favor, digite o t desse ponto: ");
-       scanf("%f", &aux.t);
-        comecou  = true;
         maxgrau++;
+        grauAtual++;
     }
-    userPoints.push_back(aux);
-    //igualarPoints();
-    printUserPoints();
-
-
 }
-
-// Called to draw scene
-//Essa tem que estar aqui
-
-void MouseAndandoNaoApertando (int x, int y)
+void delPoint(int indice)
 {
-    printf("Mouse andando. Pos: (%d, %d)\n", x,y);
+    userPoints.erase(userPoints.begin() + indice);
+    if(autoT)
+    {
+        igualarPoints();
+    }
+    if(autoGrau)
+    {
+        maxgrau--;
+        grauAtual--;
+    }
+
 }
 
-void MouseAndandoApertando (int x, int y)
-{
-    printf("Mouse segurando clique. Pos: (%d, %d)\n", x,y);
-}
 
-
-// Inicializa parâmetros de rendering
 void Inicializa (void)
 {
     // Define a cor de fundo da janela de visualização como preta
     glClearColor(0.0f,48.0f/255.0f, 64.0f/255.0f, 1.0f);
+    estadoUser = NOTHING;
 }
-
-// Função callback chamada quando o tamanho da janela é alterado
-
 double fatorial(double k)
 {
     if(k == 0)
@@ -131,7 +129,6 @@ double fatorial(double k)
         return k *fatorial(k-1);
     }
 }
-
 double combinacao(double n, double p)
 {
     if(p > n)
@@ -151,13 +148,16 @@ MatrixXd getMatriz(int grau)
     coef.setZero();
     int aux = grau;
     //for de todos os b's e já transpõe
-    for (int i = 0; i < grau+1; i++){
-        if(i > 0){
+    for (int i = 0; i < grau+1; i++)
+    {
+        if(i > 0)
+        {
             aux = aux- 1;
         }
         //cout << endl;
         //preenchendo as linhas ou seja b0, b1...
-        for (int j = 0; j < grau + 1; j++){
+        for (int j = 0; j < grau + 1; j++)
+        {
 
             /*if(((j%2!=0&&i%2==0)||(j%2==0&&i%2!=0))){
                 double auxdentu = (combinacao(aux, j));
@@ -165,17 +165,20 @@ MatrixXd getMatriz(int grau)
                     coef(grau - j,i) = (-1)*(combinacao(aux, j));
             }
             else{*/
-                coef(grau - j,i) = combinacao(aux, j);
+            coef(grau - j,i) = combinacao(aux, j);
             //}
             coef(grau - j,i)*=combinacao(grau,i);
         }
 
     }
 
-    for (int i =0;i<=grau;i++){
-        for( int j = 0;j<=grau;j++){
-            if(((i%2!=0&&j%2==0)||(i%2==0&&j%2!=0))&&(coef(i,j)!=0)){
-                    coef(i, j) = (-1)*(coef(i, j));
+    for (int i =0; i<=grau; i++)
+    {
+        for( int j = 0; j<=grau; j++)
+        {
+            if(((i%2!=0&&j%2==0)||(i%2==0&&j%2!=0))&&(coef(i,j)!=0))
+            {
+                coef(i, j) = (-1)*(coef(i, j));
             }
         }
 
@@ -221,7 +224,7 @@ VectorXd minQuad(double x[],double y[] ,int ovo, int nPontos)
     //double coef[grau];
     //for(int k = 0; k<grau; k++)
     //{
-        //coef[k] = resp1(k);
+    //coef[k] = resp1(k);
     //}
 
     //cout<<"minQuadResp:" <<resp1<<endl;
@@ -270,9 +273,6 @@ vector<Ponto_de_Controle> getControlPoints(int grau, vector<point> usrPoints )
     return pcs;
 }
 
-
-
-
 vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Controle> Pontos_Controle)//decastelljeau
 {
     vector<Ponto_de_Controle> Q ;
@@ -304,12 +304,9 @@ vector<Ponto_de_Controle> getCurvePoints(int avaliacoes, vector<Ponto_de_Control
     return retorno;
 }
 
-
-
-
 void refresh()
 {
-     // Limpa a janela com a cor
+    // Limpa a janela com a cor
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(2, 2, 2);//nao é a cor de fundo
     glFlush();
@@ -318,7 +315,7 @@ void refresh()
     glClear(GL_COLOR_BUFFER_BIT); // Limpa a janela de visualização com a cor de fundo especificada
     glPointSize(8);
     glLineWidth(2);
-   // igualarPoints();
+    //deseha pontos do usuário
     glBegin(GL_POINTS);
     for(int i =0; i < userPoints.size(); i++)//desenhas pontos inseridos pelo usuario
     {
@@ -326,63 +323,54 @@ void refresh()
         glVertex2i(userPoints[i].x,tamanhoJanela-userPoints[i].y);
     }
     glEnd();
-    if(userPoints.size()>0){
-
-    //calcula e desenha os pontos de controle
-    PC = getControlPoints(grauAtual,userPoints);
-    glColor3f(1.f, (203.0f/255.0f), 0.0f);//amarelo
-    glBegin(GL_POINTS);
-    glPointSize(4);
-    for(int i =0; i < PC.size(); i++)
+    //
+    if(userPoints.size()>0)
     {
-        glVertex2i(PC[i].x,tamanhoJanela-PC[i].y);
+        //calcula e desenha os pontos de controle
+        PC = getControlPoints(grauAtual,userPoints);
+        glColor3f(1.f, (203.0f/255.0f), 0.0f);//amarelo
+        glBegin(GL_POINTS);
+        glPointSize(4);
+        for(int i =0; i < PC.size(); i++)
+        {
+            glVertex2i(PC[i].x,tamanhoJanela-PC[i].y);
+        }
+        glEnd();//
+        PB = getCurvePoints(avaliacoes,PC);//pontos da bezier
+        //desenha a curva usando os pontos da curva
+        glBegin(GL_LINES);
+        for(int i =1; i < PB.size(); i++)
+        {
+            Ponto_de_Controle u = PB[i-1];
+            glColor3f(26.0f/255.0f, 1.0f, 188.0f/255.0f);//cor da linha
+            glVertex2i(PB[i].x,tamanhoJanela-PB[i].y);
+            glVertex2i(u.x,tamanhoJanela-u.y);
+        }
+        glEnd();
+
+        /*
+            glBegin(GL_LINE_STRIP);
+                for (int x = -4.0; x <4.0; x+=0.1){
+                float y = sin(3.14 * x) / (3.14 * x);
+                glVertex2f (x,y);
+        }
+        glEnd();
+        */
     }
-    glEnd();
-    printPontosControle(PC);
-    PB = getCurvePoints(avaliacoes,PC);
-    glPointSize(2);
-    glBegin(GL_POINTS);
-    for(int i =0; i < PB.size(); i++)
-    {
-        glColor3f(1.0f, 0.5f, .5f);//cor do ponto
-        glVertex2i(PB[i].x,tamanhoJanela-PB[i].y);
-
-    }
-    glEnd();
-    //testando pontos da curva
-
-
-    glBegin(GL_LINES);
-    for(int i =1; i < PB.size(); i++)
-    {
-        Ponto_de_Controle u = PB[i-1];
-        glColor3f(26.0f/255.0f, 1.0f, 188.0f/255.0f);//cor da linha
-        glVertex2i(PB[i].x,tamanhoJanela-PB[i].y);
-        glVertex2i(u.x,tamanhoJanela-u.y);
-        u = PB[i];
-    }
-
-
-
-    glEnd();
-
-    /*
-        glBegin(GL_LINE_STRIP);
-            for (int x = -4.0; x <4.0; x+=0.1){
-            float y = sin(3.14 * x) / (3.14 * x);
-            glVertex2f (x,y);
-    }
-    glEnd();
-    */
-}
-
- //   getControlPoints(grauAtual,userPoints);
-    //glVertex2i(x,tamanhoJanela-y);
-    //Executa os comandos OpenGL
     glFlush();
-
 }
 
+void mouseClicking(int x, int y)
+{
+    if (estadoUser == SELECTING)
+    {
+      //  cout<<userPoints[indiceSelecionado].x <<" " <<userPoints[indiceSelecionado].y <<endl;
+        userPoints[indiceSelecionado].x = x;
+        userPoints[indiceSelecionado].y = y;
+    refresh();
+    }
+
+}
 void MouseClick (int button, int estado, int x, int y)
 {
     float intervalo = 8.0f;
@@ -390,7 +378,7 @@ void MouseClick (int button, int estado, int x, int y)
     switch (button)
     {
     case GLUT_LEFT_BUTTON:
-     //   printf("ESQ ");
+        //   printf("ESQ ");
         if (estado == GLUT_DOWN)
         {
             bool existe = false;
@@ -399,24 +387,49 @@ void MouseClick (int button, int estado, int x, int y)
                 if((userPoints[i].x-x>=intervaloMin)&&(userPoints[i].x-x<=intervalo)
                         &&(userPoints[i].y-y>=intervaloMin)&&(userPoints[i].y-y<=intervalo))
                 {
-                    auxT = userPoints[i].t;
-                    temT = true;
-                    userPoints.erase(userPoints.begin() + i);
-//                    userPoints[i].x = x;userPoints[i].y = y;
-
+                   indiceSelecionado = i;
+                   estadoUser=SELECTING;
+                   existe = true;
                 }
             }
+            if(!existe){
+                   estadoUser=ADDING;
+            }
         }
-       // printf("Pressionado na posição: ");
+        // printf("Pressionado na posição: ");
         if (estado == GLUT_UP)
         {
-
             //printf("Posiçao solta: ");
-            addPoint(x,y);
+            if(estadoUser==ADDING)
+            {
+                addPoint(x,y);
+                }
+                estadoUser = NOTHING;
         }
         break;
     case GLUT_RIGHT_BUTTON:
-        //printf("DIR ");
+       if (estado == GLUT_DOWN)
+        {
+            bool existe = false;
+            for(int i = 0; (!existe)&(i< userPoints.size()); i++)
+            {
+                if((userPoints[i].x-x>=intervaloMin)&&(userPoints[i].x-x<=intervalo)
+                        &&(userPoints[i].y-y>=intervaloMin)&&(userPoints[i].y-y<=intervalo))
+                {
+                   cout<<"achei um "<<endl;
+                   indiceSelecionado = i;
+                   estadoUser=DELETING;
+                   existe = true;
+                }
+            }
+
+        }
+        // printf("Pressionado na posição: ");
+        if (estado == GLUT_UP&&estadoUser==DELETING)
+        {
+           delPoint(indiceSelecionado);
+           estadoUser = NOTHING;
+        }
         break;
     case GLUT_MIDDLE_BUTTON:
         //printf("MEIO ");
@@ -425,51 +438,6 @@ void MouseClick (int button, int estado, int x, int y)
 //    Desenha(x,y);
     refresh();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 {
     // Evita a divisao por zero
@@ -495,28 +463,28 @@ void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 
     refresh();
 }
-void configure(){
+void configure()
+{
     cout<<"Digite o grau desejado para as curvas desenhadas"<<endl;
-      scanf("%d", &grauAtual);
-      cout<<"Digite a quantidade de avaliações desejadas para o algoritmo de Decastelljeau"<<endl;
-      scanf("%d", &avaliacoes);
+    scanf("%d", &grauAtual);
+    cout<<"Digite a quantidade de avaliações desejadas para o algoritmo de Decastelljeau"<<endl;
+    scanf("%d", &avaliacoes);
 
 }
-
 int main(void)
 {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(900,700);
     glutInitWindowPosition(1000,100);
     glutCreateWindow("PG");
-    PC.clear();PB.clear();userPoints.clear();
-    //glutDisplayFunc(Desenha);
+    PC.clear();
+    PB.clear();
+    userPoints.clear();
     glutReshapeFunc(AlteraTamanhoJanela);
     glutDisplayFunc(refresh);
     glutMouseFunc(MouseClick);
+    glutMotionFunc(mouseClicking);
     Inicializa();
-
-    configure();
     glutMainLoop();
 
 }
