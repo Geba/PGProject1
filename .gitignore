@@ -22,3 +22,4 @@
 *.exe
 PGProject_1/bin/Debug/PGProject_1.exe
 *.exe
+*.o

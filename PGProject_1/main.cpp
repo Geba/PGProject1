@@ -8,7 +8,7 @@
 using namespace std;
 using namespace Eigen;
 int tamanhoJanela;
-int grauAtual = 1;
+int grauAtual = 2;
 int maxgrau = 0;
 int avaliacoes = 100;
 bool autoT = true;//gera os Ts Na ordem em que foram criados
@@ -20,6 +20,7 @@ const int ADDING = 3;
 const int DELETING = 4;
 int estadoUser = NOTHING;
 int indiceSelecionado = 0;
+bool mudou = true;
 
 
 struct point
@@ -66,8 +67,23 @@ void printBezierPoints()
 
 void printGrauAtual()
 {
-    cout<<"Grau atual: "<<grauAtual<<endl;
+    cout<<"Grau atual: "<<endl<<
+    grauAtual<<endl;
 }
+void printQntAvaliacoes()
+{
+    cout<<"Quantidade de avaliações atual: "<<endl<<avaliacoes<<endl;
+
+}
+void printAutoTValue()
+{
+    cout<<"Auto T está:"<<endl<<autoT<<endl;
+}
+void printAutoTGrauValue()
+{
+    cout<<"Auto Grau está: "<<endl<<autoGrau<<endl;
+}
+
 void igualarPoints()
 {
     if(userPoints.size()>0)
@@ -89,11 +105,15 @@ void addPoint(int x, int y)
     if(autoT)
     {
         igualarPoints();
+    }else{
+        cout<<"Digite o t Para esse ponto:"<<endl;
+
+
     }
     if(autoGrau)
     {
-        maxgrau++;
-        grauAtual++;
+        maxgrau = userPoints.size()-1;
+        grauAtual=userPoints.size()-1;
     }
 }
 void delPoint(int indice)
@@ -105,9 +125,9 @@ void delPoint(int indice)
     }
     if(autoGrau)
     {
-        maxgrau--;
-        grauAtual--;
-    }
+        maxgrau = userPoints.size()-1;
+        grauAtual=userPoints.size()-1;
+        }
 
 }
 
@@ -158,28 +178,13 @@ MatrixXd getMatriz(int grau)
         //preenchendo as linhas ou seja b0, b1...
         for (int j = 0; j < grau + 1; j++)
         {
-
-            /*if(((j%2!=0&&i%2==0)||(j%2==0&&i%2!=0))){
-                double auxdentu = (combinacao(aux, j));
-                if (auxdentu != 0)
-                    coef(grau - j,i) = (-1)*(combinacao(aux, j));
-            }
-            else{*/
-            coef(grau - j,i) = combinacao(aux, j);
-            //}
-            coef(grau - j,i)*=combinacao(grau,i);
-        }
-
-    }
-
-    for (int i =0; i<=grau; i++)
-    {
-        for( int j = 0; j<=grau; j++)
-        {
-            if(((i%2!=0&&j%2==0)||(i%2==0&&j%2!=0))&&(coef(i,j)!=0))
+             coef(grau - j,i) = combinacao(aux, j) * combinacao(grau,i);
+             if(((i%2!=0&&((grau-j)%2==0)||(i%2==0&&(grau-j)%2!=0))&&(coef(grau-j,i)!=0)))
             {
-                coef(i, j) = (-1)*(coef(i, j));
+                coef(grau-j, i) = (-1)*(coef(grau-j, i));
             }
+
+
         }
 
     }
@@ -327,7 +332,12 @@ void refresh()
     if(userPoints.size()>0)
     {
         //calcula e desenha os pontos de controle
+        if(mudou){
         PC = getControlPoints(grauAtual,userPoints);
+        PB = getCurvePoints(avaliacoes,PC);//pontos da bezier
+            mudou = false;
+        }
+
         glColor3f(1.f, (203.0f/255.0f), 0.0f);//amarelo
         glBegin(GL_POINTS);
         glPointSize(4);
@@ -336,7 +346,7 @@ void refresh()
             glVertex2i(PC[i].x,tamanhoJanela-PC[i].y);
         }
         glEnd();//
-        PB = getCurvePoints(avaliacoes,PC);//pontos da bezier
+
         //desenha a curva usando os pontos da curva
         glBegin(GL_LINES);
         for(int i =1; i < PB.size(); i++)
@@ -405,6 +415,7 @@ void MouseClick (int button, int estado, int x, int y)
                 addPoint(x,y);
                 }
                 estadoUser = NOTHING;
+                mudou = true;
         }
         break;
     case GLUT_RIGHT_BUTTON:
@@ -416,7 +427,6 @@ void MouseClick (int button, int estado, int x, int y)
                 if((userPoints[i].x-x>=intervaloMin)&&(userPoints[i].x-x<=intervalo)
                         &&(userPoints[i].y-y>=intervaloMin)&&(userPoints[i].y-y<=intervalo))
                 {
-                   cout<<"achei um "<<endl;
                    indiceSelecionado = i;
                    estadoUser=DELETING;
                    existe = true;
@@ -429,6 +439,7 @@ void MouseClick (int button, int estado, int x, int y)
         {
            delPoint(indiceSelecionado);
            estadoUser = NOTHING;
+           mudou = true;
         }
         break;
     case GLUT_MIDDLE_BUTTON:
