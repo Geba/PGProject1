@@ -39,7 +39,7 @@ de grau arbitrário.
 using namespace std;
 using namespace Eigen;
 int tamanhoJanela;
-int grauAtual = 2;
+int grauAtual = 0;
 int maxgrau = 0;
 int avaliacoes = 100;
 bool autoT = true;//gera os Ts Na ordem em que foram criados
@@ -443,9 +443,14 @@ void refresh()
     //
     if(userPoints.size()>0)
     {
+        if(autoGrau){
+        grauAtual = userPoints.size()-1;
+        }
         //calcula e desenha os pontos de controle
         if(mudou)
-        {
+        {   if(autoT){
+            igualarPoints();
+        }
             PC = getControlPoints(grauAtual,userPoints);
             PB = getCurvePoints(avaliacoes,PC);//pontos da bezier
             mudou = false;
