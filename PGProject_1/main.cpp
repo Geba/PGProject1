@@ -53,6 +53,17 @@ int estadoUser = NOTHING;
 int indiceSelecionado = 0;
 bool mudou = true;
 
+//Variáveis auxiliares coordenadas
+int menu_x_aux = 0;
+int menu_y_aux = 0;
+float intervalo = 8.0f;
+float intervaloMin = -8.0f;
+
+//Modos dos Teclado
+const int SELECT_POINTS = 0;
+const int DELETE_POINTS = 1;
+int modo = SELECT_POINTS;
+
 struct point
 {
     int x;
@@ -87,48 +98,54 @@ void clearConsole()
 
 void printControlPoints()
 {
-    printf("Pontos de controle\n(x, y)\n");
+    printf("\nPontos de controle\n(x, y)\n");
     for(int i=0; i< PC.size(); i++)
     {
-        printf("%d, %d \n", PC[i].x,PC[i].y);
+        printf("%d, %d \n\n", PC[i].x,PC[i].y);
     }
 }
 void printBezierPoints()
 {
-    printf("Pontos da Bezier\n(x, y)\n");
+    printf("\nPontos da Bezier\n(x, y)\n");
     for(int i=0; i< PB.size(); i++)
     {
-        printf("%d, %d \n", PB[i].x,PB[i].y);
+        printf("%d, %d \n\n", PB[i].x,PB[i].y);
     }
 }
 
 void printGrauAtual()
 {
-    cout<<"Grau atual: "<<endl<<
+    cout<< endl << "Grau atual: "<<endl<<
         grauAtual<<endl;
 }
 void printQntAvaliacoes()
 {
-    cout<<"Quantidade de avaliações atual: "<<endl<<avaliacoes<<endl;
+    cout<< endl << "Quantidade de avaliacoes atual: "<<endl<<avaliacoes<<endl;
 
 }
 void printAutoTValue()
 {
-    cout<<"A Geracao automatica de Parametro está: ";
-    if(autoT){
-        cout<<"Ativada"<<endl;
-    }else{
-            cout<<"Desativada"<<endl;
+    cout<<"A Geracao automatica de Parametro esta: ";
+    if(autoT)
+    {
+        cout<<"Ativada"<<endl << endl;
+    }
+    else
+    {
+        cout<<"Desativada" << endl << endl;
     }
 
 }
 void printAutoGrauValue()
 {
-    cout<<"A Geracao automatica de Grau está: ";
-    if(autoGrau){
-        cout<<"Ativada"<<endl;
-    }else{
-            cout<<"Desativada"<<endl;
+    cout<<"A Geracao automatica de Grau esta: ";
+    if(autoGrau)
+    {
+        cout<<"Ativada"<<endl << endl;
+    }
+    else
+    {
+        cout<<"Desativada" <<endl << endl;
     }
 }
 
@@ -149,23 +166,26 @@ void addPoint(int x, int y)
     point aux;
     aux.x = x;
     aux.y =y;
-    userPoints.push_back(aux);
+
     if(autoT)
     {
         igualarPoints();
     }
     else
     {
-        cout<<"Digite o t Para esse ponto:"<<endl;
-
+        cout<<"Digite o T Para esse ponto:" << endl;
+        scanf("%f", &aux.t);
 
     }
+    userPoints.push_back(aux);
+
     if(autoGrau)
     {
         maxgrau = userPoints.size()-1;
-        grauAtual=userPoints.size()-1;
+        grauAtual = userPoints.size()-1;
     }
 }
+
 void delPoint(int indice)
 {
     userPoints.erase(userPoints.begin() + indice);
@@ -204,15 +224,18 @@ bool resultadosAchou[1000] = {true,true,false};
 
 long double fatorial(int n)
 {
-    if (resultadosAchou[n]) {
-        return resultados[n];
-    } else {
-    if (n == 0 || n == 1)
+    if (resultadosAchou[n])
     {
-        return 1;
+        return resultados[n];
     }
     else
     {
+        if (n == 0 || n == 1)
+        {
+            return 1;
+        }
+        else
+        {
             if (resultadosAchou[n - 1])
             {
                 resultados[n] = (floor(resultados[n-1] + 0.5) * (double) n);
@@ -448,14 +471,9 @@ void refresh()
         }
         glEnd();
 
-        /*
-            glBegin(GL_LINE_STRIP);
-                for (int x = -4.0; x <4.0; x+=0.1){
-                float y = sin(3.14 * x) / (3.14 * x);
-                glVertex2f (x,y);
-        }
+
         glEnd();
-        */
+
     }
     glFlush();
 }
@@ -467,71 +485,265 @@ void mouseClicking(int x, int y)
         //  cout<<userPoints[indiceSelecionado].x <<" " <<userPoints[indiceSelecionado].y <<endl;
         userPoints[indiceSelecionado].x = x;
         userPoints[indiceSelecionado].y = y;
+        mudou = true;
         refresh();
     }
 
 }
+
+void configure(int opcao)
+{
+    switch (opcao)
+    {
+    case 0:
+        cout<<"Digite o grau desejado para as curvas desenhadas"<<endl;
+        scanf("%d", &grauAtual);
+        break;
+    case 1:
+        cout<<"Digite a quantidade de avaliacoes desejadas para o algoritmo de De Casteljau"<<endl;
+        scanf("%d", &avaliacoes);
+    }
+}
+
+void reset()
+{
+
+    userPoints.clear();
+    mudou=true;
+    refresh();
+    clearConsole();
+    cout << "Voce esta no modo de adicionar pontos" << endl;
+    modo = SELECT_POINTS;
+}
+
+void MenuPrincipal(int op)
+{
+
+    switch (op)
+    {
+    case 0:
+        reset();
+        break;
+    case 1:
+        clearConsole();
+        break;
+    case 2:
+        exit(0);
+        break;
+    }
+}
+
+
+
+void MenuImprimir(int op)
+{
+
+    switch (op)
+    {
+    case 0:
+        if (userPoints.size() > 0)
+        printControlPoints();
+        else
+            cout << endl << "Por favor, adicione algum ponto" << endl;
+        break;
+    case 1:
+        if (userPoints.size() > 0)
+        printUserPoints();
+        else
+            cout << endl << "Por favor, adicione algum ponto" << endl;
+        break;
+    case 2:
+        if (userPoints.size() > 0)
+        printBezierPoints();
+          else
+            cout << endl << "Por favor, adicione algum ponto" << endl;
+        break;
+
+    case 3:
+        if (userPoints.size() > 0)
+        printGrauAtual();
+          else
+            cout << endl << "Por favor, adicione algum ponto" << endl;
+        break;
+
+    case 4:
+        if (userPoints.size() > 0)
+        printQntAvaliacoes();
+          else
+            cout << endl << "Por favor, adicione algum ponto" << endl;
+        break;
+
+    case 5:
+        if (userPoints.size() > 0)
+        printAutoTValue();
+          else
+            cout << endl << "Por favor, adicione algum ponto" << endl;
+        break;
+
+    case 6:
+        if (userPoints.size() > 0)
+        printAutoGrauValue();
+          else
+            cout << endl << "Por favor, adicione algum ponto" << endl;
+        break;
+    default:
+        cout<<"Opcao Não encontrada!"<<endl;
+    }
+}
+
+
+
+
+void MenuLigaDes(int op)
+{
+    switch (op)
+    {
+    case 0:
+        if (autoGrau)
+        {
+            printf("\nGrau Automatico Desativado\n");
+            autoGrau = false;
+        }
+        else
+        {
+            printf("\nGrau Automatico Ativado\n");
+            autoGrau = true;
+        }
+
+        break;
+    case 1:
+        if (autoT)
+        {
+            printf("\nParametro T Automatico Desativado\n");
+            autoT = false;
+        }
+        else
+        {
+            printf("\nParametro T Automatico Ativado\n");
+            autoT = true;
+        }
+         break;
+    }
+}
+
+void MenuGrauAva(int op)
+{
+
+    switch(op)
+    {
+    case 0:
+        printGrauAtual();
+        cout<<"Digite o novo valor para o grau da curva"<<endl;
+        autoGrau = false;
+        scanf("%d", &grauAtual);
+        cout<<endl<<"O ajuste automatico de grau foi desativado"<<endl;
+        if (grauAtual>(userPoints.size()-1))
+            cout<<"Note que um grau de curva maior ou igual que a quantidade de pontos" << endl << "deixara a curva instavel"
+            <<endl <<endl << "Grau Alterado" << endl;
+        break;
+    case 1:
+        printQntAvaliacoes();
+        cout<<"Digite a nova quantidade de avaliacoes do algoritmo de De Casteljau: "<<endl;
+        scanf("%d", &avaliacoes);
+        cout << endl << "Avaliacoes Alterado" << endl;
+        break;
+    default:
+        cout<<"Opcao nao encontrada!"<<endl;
+    }
+    mudou = true;
+}
+
+void nada(int op)
+{
+}
+
+
+
+void setModo(int op)
+{
+    if(op == 0)
+    {
+        modo = SELECT_POINTS;
+        cout<< "Voce esta no modo de selecao de pontos "<< endl;
+    }
+    else if(op == 1)
+    {
+        modo = DELETE_POINTS;
+        cout<< "Voce esta no modo de Delecao de pontos"<<endl;
+    }
+}
+
+
 void MouseClick (int button, int estado, int x, int y)
 {
-    float intervalo = 8.0f;
-    float intervaloMin = -8.0f;
+    //cout<<modo<<endl;
     switch (button)
     {
     case GLUT_LEFT_BUTTON:
-        //   printf("ESQ ");
-        if (estado == GLUT_DOWN)
+        if(modo==SELECT_POINTS)
         {
-            bool existe = false;
-            for(int i = 0; (!existe)&(i< userPoints.size()); i++)
+            if (estado == GLUT_DOWN)
             {
-                if((userPoints[i].x-x>=intervaloMin)&&(userPoints[i].x-x<=intervalo)
-                        &&(userPoints[i].y-y>=intervaloMin)&&(userPoints[i].y-y<=intervalo))
+                bool existe = false;
+                for(int i = 0; (!existe)&(i< userPoints.size()); i++)
                 {
-                    indiceSelecionado = i;
-                    estadoUser=SELECTING;
-                    existe = true;
+                    if((userPoints[i].x-x>=intervaloMin)&&(userPoints[i].x-x<=intervalo)
+                            &&(userPoints[i].y-y>=intervaloMin)&&(userPoints[i].y-y<=intervalo))
+                    {
+                        indiceSelecionado = i;
+                        estadoUser=SELECTING;
+                        existe = true;
+                    }
+                }
+                if(!existe)
+                {
+                    estadoUser=ADDING;
                 }
             }
-            if(!existe)
+            // printf("Pressionado na posição: ");
+            if (estado == GLUT_UP)
             {
-                estadoUser=ADDING;
+                //printf("Posiçao solta: ");
+                if(estadoUser==ADDING)
+                {
+                    addPoint(x,y);
+                }
+                estadoUser = NOTHING;
+                mudou = true;
             }
         }
-        // printf("Pressionado na posição: ");
-        if (estado == GLUT_UP)
+        else if(modo==DELETE_POINTS)
         {
-            //printf("Posiçao solta: ");
-            if(estadoUser==ADDING)
+           //cout <<"estado de delecao"<<endl;
+            if (estado == GLUT_DOWN)
             {
-                addPoint(x,y);
+                bool existe = false;
+                for(int i = 0; (!existe)&(i< userPoints.size()); i++)
+                {
+                    if((userPoints[i].x-x>=intervaloMin)&&(userPoints[i].x-x<=intervalo)
+                            &&(userPoints[i].y-y>=intervaloMin)&&(userPoints[i].y-y<=intervalo))
+                    {
+                        indiceSelecionado = i;
+                        estadoUser=DELETING;
+                        existe = true;
+                    }
+                }
+
             }
-            estadoUser = NOTHING;
-            mudou = true;
+            // printf("Pressionado na posição: ");
+            if (estado == GLUT_UP&&estadoUser==DELETING)
+            {
+                delPoint(indiceSelecionado);
+                estadoUser = NOTHING;
+                mudou = true;
+            }
         }
+
+        //   printf("ESQ ");
+
         break;
     case GLUT_RIGHT_BUTTON:
-        if (estado == GLUT_DOWN)
-        {
-            bool existe = false;
-            for(int i = 0; (!existe)&(i< userPoints.size()); i++)
-            {
-                if((userPoints[i].x-x>=intervaloMin)&&(userPoints[i].x-x<=intervalo)
-                        &&(userPoints[i].y-y>=intervaloMin)&&(userPoints[i].y-y<=intervalo))
-                {
-                    indiceSelecionado = i;
-                    estadoUser=DELETING;
-                    existe = true;
-                }
-            }
 
-        }
-        // printf("Pressionado na posição: ");
-        if (estado == GLUT_UP&&estadoUser==DELETING)
-        {
-            delPoint(indiceSelecionado);
-            estadoUser = NOTHING;
-            mudou = true;
-        }
         break;
     case GLUT_MIDDLE_BUTTON:
         //printf("MEIO ");
@@ -540,6 +752,57 @@ void MouseClick (int button, int estado, int x, int y)
 //    Desenha(x,y);
     refresh();
 }
+
+
+void CriaMenu()
+{
+
+
+//    menu_x_aux = x;
+//    menu_y_aux = y;
+    int menu,submenuImprimir,submenuConfig, submenuAlterar,submenuLigDes;
+
+    modo = glutCreateMenu(setModo);
+    glutAddMenuEntry("Adicionar Pontos", 0);
+    glutAddMenuEntry("Deletar Pontos", 1);
+
+    submenuImprimir = glutCreateMenu(MenuImprimir);
+    glutAddMenuEntry("Pontos de Controle",0);
+    glutAddMenuEntry("Pontos Inseridos",1);
+    glutAddMenuEntry("Pontos de Bezier",2);
+    glutAddMenuEntry("Grau da Curva",3);
+    glutAddMenuEntry("Quantidade de Avaliações",4);
+    glutAddMenuEntry("Ajuste Automático Parâmetro",5);
+    glutAddMenuEntry("Ajuste Automático de Grau",6);
+
+    submenuAlterar = glutCreateMenu(MenuGrauAva);
+    glutAddMenuEntry("Grau",0);
+    glutAddMenuEntry("Avaliações",1);
+
+
+    submenuLigDes = glutCreateMenu(MenuLigaDes);
+    glutAddMenuEntry("Auto Ajuste Grau",0);
+    glutAddMenuEntry("Auto Ajuste Parâmetro",1);
+
+
+    submenuConfig = glutCreateMenu(nada);
+    glutAddSubMenu("Alterar",submenuAlterar);
+    glutAddSubMenu("Ligar/Desligar",submenuLigDes);
+
+
+    menu = glutCreateMenu(MenuPrincipal);
+    glutAddSubMenu("Modo", modo);
+    glutAddSubMenu("Imprimir Valores",submenuImprimir);
+    glutAddSubMenu("Configuração",submenuConfig);
+    glutAddMenuEntry("Limpar Desenho",0);
+    glutAddMenuEntry("Limpar Console", 1);
+    glutAddMenuEntry("Fechar Programa",2);
+
+
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
+}
+
+
 void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 {
     // Evita a divisao por zero
@@ -565,188 +828,7 @@ void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 
     refresh();
 }
-void configure()
-{
-    cout<<"Digite o grau desejado para as curvas desenhadas"<<endl;
-    scanf("%d", &grauAtual);
-    cout<<"Digite a quantidade de avaliacoes desejadas para o algoritmo de De Casteljau"<<endl;
-    scanf("%d", &avaliacoes);
 
-}
-void bemVindo(){
-    cout<<"A qualquer momento, voce pode digitar qualquer uma dessa teclas"<<endl
-    <<"p: Entra no menu de impressao de valores"<<endl
-    <<"a: Entra no menu de Configuracao"<<endl
-    <<"c: Limpa o console"<<endl
-    <<"r: Reseta o sistema, use para desenhar uma nova curva"<<endl
-    <<"e: Sai do programa"<<endl<<endl;
-}
-void reset(){
-    userPoints.clear();
-    mudou=true;
-    refresh();
-    clearConsole();
-    bemVindo();
-}
-
-void hadleKeyboard(unsigned char key, int x, int y)
-{
-    /*Comandos:
-    p = print
-    c: printControlPoints
-    u: printUserPoints
-    b: printBezierPoints
-    g: printGrauAtual
-    a: printQntAvaliacoes
-    t: printAutoTValue
-    v: printAutoGrauValue
-
-    a = alterar
-    g: alterarGrauAtual
-    h: alterarqntAvaliacoes
-    t: alterarAutoTValue
-    v: alterarAutograuValue
-
-    c =  clearConsole
-    esc = exit
-
-    */
-    if(key == 'e')
-    {
-        exit(0);
-    }
-    else if(key == 'p')
-    {
-        cout<<"Digite a sua opcao: "<<endl
-        <<"c: Imprimir Pontos de Controle"<<endl
-        <<"u: Imprimir Pontos Inseridos"<<endl
-        <<"b: Imprimir Pontos da Bezier"<<endl
-        <<"g: Imprimir Grau da Curva"<<endl
-        <<"a: Imprimir Quantidade de Avalicoes"<<endl
-        <<"t: Imprimir Ajuste Automatico de Parametro"<<endl
-        <<"v: Imprimir Ajuste Automatico de Grau"<<endl<<endl;
-        //char escolha;
-        char escolha = getch();
-        //scanf("%c", &escolha);
-        if(escolha=='c')
-        {
-            printControlPoints();
-            bemVindo();
-        }
-        else if(escolha=='u')
-        {
-            printUserPoints();
-            bemVindo();
-        }
-        else if(escolha=='b')
-        {
-            printBezierPoints();
-              bemVindo();
-        }
-        else if(escolha=='g')
-        {
-                printGrauAtual();
-                bemVindo();
-        }
-        else if(escolha=='a')
-        {
-                printQntAvaliacoes();
-                bemVindo();
-        }
-        else if(escolha=='t')
-        {
-                printAutoTValue();
-                bemVindo();
-        }
-        else if(escolha=='v')
-        {
-                printAutoGrauValue();
-                bemVindo();
-        }else{
-            cout<<"Opcao Não encontrada!"<<endl;
-            bemVindo();
-        }
-    }
-    else if(key == 'a')
-    {
-
-        cout<<"Digite a sua opcao: "<<endl
-        <<"g: Alterar grau da curva"<<endl
-        <<"a: Alterar quantidade de avaliacoes"<<endl
-        <<"t: Ligar ou desligar ajuste automatico de parametro:"<<endl
-        <<"v: Ligar ou desligar ajuste automatico de grau"<<endl <<endl;
-        char escolha = getch();
-        //scanf("%c", &escolha);
-        if(escolha=='v')
-        {
-            printAutoGrauValue();
-            cout<<"Digite a para ativar, d para desativar"<<endl;
-            char aux;
-            scanf("%c", &aux);
-
-            if(aux =='a')
-            {
-                autoGrau=true;
-            }
-            else if(aux=='d')
-            {
-                autoGrau = false;
-            }
-        cout<<endl;
-        bemVindo();
-        }
-        else if(escolha=='t')
-        {
-            printAutoTValue();
-            cout<<"Digite a para ativar, d para desativar"<<endl;
-            char aux;
-            scanf("%c", &aux);
-            if(aux =='a')
-            {
-                autoT=true;
-            }
-            else if(aux=='d')
-            {
-                autoT = false;
-            }
-            cout<<endl;
-            bemVindo();
-        }
-        else if (escolha=='g')
-        {
-            printGrauAtual();
-            cout<<"Digite o novo valor para o grau da curva"<<endl;
-            autoGrau = false;
-            scanf("%d", &grauAtual);
-            cout<<endl<<"O ajuste automatico de grau foi desativado"<<endl;
-            if (grauAtual>(userPoints.size()-1)){
-            cout<<"Note que um grau de curva maior ou igual que a quantidade de pontos  deixara a curva instavel"<<endl;
-            }
-        cout<<endl;
-        //bemVindo();
-        }
-        else if(escolha=='a')
-        {
-            printQntAvaliacoes();
-            cout<<"Digite a nova quantidade de avaliacoes do algoritmo de De Casteljau"<<endl;
-            scanf("%d", &avaliacoes);
-        }else{
-            cout<<"Opcao Não encontrada!"<<endl;
-
-        }
-        mudou = true;
-    cout<<endl;
-    bemVindo();
-    }
-    else if(key == 'c')
-    {
-        clearConsole();
-        bemVindo();
-    }
-    else if(key=='r'){
-        reset();
-    }
-}
 
 int main(void)
 {
@@ -759,9 +841,11 @@ int main(void)
     userPoints.clear();
     glutReshapeFunc(AlteraTamanhoJanela);
     glutDisplayFunc(refresh);
+    CriaMenu();
     glutMouseFunc(MouseClick);
     glutMotionFunc(mouseClicking);
-    glutKeyboardUpFunc(hadleKeyboard);
+    //glutKeyboardUpFunc(handleKeyboard);
+
     Inicializa();
     reset();
     glutMainLoop();
